@@ -19,7 +19,7 @@ RELEASE_VERSION = case
   #Builds of branches that aren't master or release
   when (BRANCH.nil? || !BRANCH.match(/^(refs\/heads\/)?release[\/-]/i)) then '0.0'
   #Builds of release branches (or locally or on server)
-  else BRAND.match(/^(?:refs\/heads\/)?release[\/-](\d+(?:\.\d+){0,3})$/i)[1]
+  else BRANCH.match(/^(?:refs\/heads\/)?release[\/-](\d+(?:\.\d+){0,3})$/i)[1]
 end
 VERSION = Gem::Version.new("#{RELEASE_VERSION}.#{BUILD_NUMBER || '0'}.0")
 
@@ -30,10 +30,10 @@ Gem::Specification.new do |s|
   s.authors     = ["Rhosys", "Authress"]
   s.email       = ["support@authress.io"]
   s.homepage    = "https://authress.io"
-  s.summary     = "Authress SDK"
+  s.summary     = "The Authress SDK for Ruby provides authorization as a service with fully compatible REST apis to integrate with Authress at https://authress.io."
   s.description = File.read(File.expand_path("./README.md"))
   s.license     = "Apache-2.0"
-  s.required_ruby_version = ">= 1.9"
+  s.required_ruby_version = ">= 2.0"
 
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
   s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'
