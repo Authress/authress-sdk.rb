@@ -9,6 +9,8 @@ OpenAPI spec version: v1
 Contact: support@authress.io
 =end
 
+require 'rdoc'
+
 PULL_REQUEST = nil
 BRANCH = ENV['GITHUB_REF']
 BUILD_NUMBER = ENV['GITHUB_RUN_NUMBER']
@@ -31,7 +33,7 @@ Gem::Specification.new do |s|
   s.email       = ["support@authress.io"]
   s.homepage    = "https://authress.io"
   s.summary     = "The Authress SDK for Ruby provides authorization as a service with fully compatible REST apis to integrate with Authress at https://authress.io."
-  s.description = File.read(File.expand_path("./README.md"))
+  s.description = RDoc::Markup::ToRdoc.new.convert(File.read(File.expand_path("./README.md")))
   s.license     = "Apache-2.0"
   s.required_ruby_version = ">= 2.0"
 
