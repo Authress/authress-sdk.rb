@@ -1,4 +1,4 @@
-# SwaggerClient::TokenRequest
+# AuthressSdk::TokenRequest
 
 ## Properties
 Name | Type | Description | Notes

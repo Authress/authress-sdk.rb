@@ -1,4 +1,4 @@
-# SwaggerClient::V1recordsLinksSelf
+# AuthressSdk::V1recordsLinksSelf
 
 ## Properties
 Name | Type | Description | Notes

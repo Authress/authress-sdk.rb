@@ -1,4 +1,4 @@
-# SwaggerClient::MetadataObject
+# AuthressSdk::MetadataObject
 
 ## Properties
 Name | Type | Description | Notes

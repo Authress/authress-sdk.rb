@@ -1,4 +1,4 @@
-# SwaggerClient::RolesApi
+# AuthressSdk::RolesApi
 
 All URIs are relative to */*
 
@@ -19,20 +19,20 @@ Creates a role with permissions.         <br><span class=\"badge badge-outline-s
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::RolesApi.new
-body = SwaggerClient::Body6.new # Body6 | 
+api_instance = AuthressSdk::RolesApi.new
+body = AuthressSdk::Body6.new # Body6 | 
 
 
 begin
   #Create a role.
   result = api_instance.create_role(body)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling RolesApi->create_role: #{e}"
 end
 ```
@@ -68,19 +68,19 @@ Remove a role. If a record references the role, that record will not be modified
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::RolesApi.new
+api_instance = AuthressSdk::RolesApi.new
 role_id = 'role_id_example' # String | The identifier of the role.
 
 
 begin
   #Deletes a role.
   api_instance.delete_role(role_id)
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling RolesApi->delete_role: #{e}"
 end
 ```
@@ -116,12 +116,12 @@ Roles contain a list of permissions that will be applied to any user or resource
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::RolesApi.new
+api_instance = AuthressSdk::RolesApi.new
 role_id = 'role_id_example' # String | The identifier of the role.
 
 
@@ -129,7 +129,7 @@ begin
   #Get a role.
   result = api_instance.get_role(role_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling RolesApi->get_role: #{e}"
 end
 ```
@@ -165,13 +165,13 @@ Updates a role adding or removing permissions.         <br><span class=\"badge b
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::RolesApi.new
-body = SwaggerClient::Body7.new # Body7 | 
+api_instance = AuthressSdk::RolesApi.new
+body = AuthressSdk::Body7.new # Body7 | 
 role_id = 'role_id_example' # String | The identifier of the role.
 
 
@@ -179,7 +179,7 @@ begin
   #Update a role.
   result = api_instance.update_role(bodyrole_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling RolesApi->update_role: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# SwaggerClient::V1usersuserIdresourcesresourceUrimetadataAccount
+# AuthressSdk::V1usersuserIdresourcesresourceUrimetadataAccount
 
 ## Properties
 Name | Type | Description | Notes

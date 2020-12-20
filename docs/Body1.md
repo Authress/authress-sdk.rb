@@ -1,4 +1,4 @@
-# SwaggerClient::Body1
+# AuthressSdk::Body1
 
 ## Properties
 Name | Type | Description | Notes

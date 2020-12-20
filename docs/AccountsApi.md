@@ -1,4 +1,4 @@
-# SwaggerClient::AccountsApi
+# AuthressSdk::AccountsApi
 
 All URIs are relative to */*
 
@@ -19,12 +19,12 @@ Includes the original configuration information.         <br><span class=\"badge
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccountsApi.new
+api_instance = AuthressSdk::AccountsApi.new
 account_id = 'account_id_example' # String | The unique identifier for the account
 
 
@@ -32,7 +32,7 @@ begin
   #Get account information.
   result = api_instance.get_account(account_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccountsApi->get_account: #{e}"
 end
 ```
@@ -68,18 +68,18 @@ Returns a list of identities linked for this account.         <br><span class=\"
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccountsApi.new
+api_instance = AuthressSdk::AccountsApi.new
 
 begin
   #Get all linked identities for this account.
   result = api_instance.get_account_identities
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccountsApi->get_account_identities: #{e}"
 end
 ```
@@ -112,18 +112,18 @@ Returns a list of accounts that the user has access to.         <br><span class=
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccountsApi.new
+api_instance = AuthressSdk::AccountsApi.new
 
 begin
   #Get all accounts user has access to
   result = api_instance.get_accounts
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccountsApi->get_accounts: #{e}"
 end
 ```
@@ -156,19 +156,19 @@ An identity is a JWT subscriber *sub* and issuer *iss*. Only one account my be l
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccountsApi.new
-body = SwaggerClient::Body9.new # Body9 | 
+api_instance = AuthressSdk::AccountsApi.new
+body = AuthressSdk::Body9.new # Body9 | 
 
 
 begin
   #Link a new account identity.
   api_instance.link_identity(body)
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccountsApi->link_identity: #{e}"
 end
 ```

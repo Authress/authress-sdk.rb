@@ -1,4 +1,4 @@
-# SwaggerClient::User
+# AuthressSdk::User
 
 ## Properties
 Name | Type | Description | Notes

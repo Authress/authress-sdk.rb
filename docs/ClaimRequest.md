@@ -1,4 +1,4 @@
-# SwaggerClient::ClaimRequest
+# AuthressSdk::ClaimRequest
 
 ## Properties
 Name | Type | Description | Notes

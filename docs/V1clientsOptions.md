@@ -1,4 +1,4 @@
-# SwaggerClient::V1clientsOptions
+# AuthressSdk::V1clientsOptions
 
 ## Properties
 Name | Type | Description | Notes

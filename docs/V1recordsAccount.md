@@ -1,4 +1,4 @@
-# SwaggerClient::V1recordsAccount
+# AuthressSdk::V1recordsAccount
 
 ## Properties
 Name | Type | Description | Notes

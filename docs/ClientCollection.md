@@ -1,4 +1,4 @@
-# SwaggerClient::ClientCollection
+# AuthressSdk::ClientCollection
 
 ## Properties
 Name | Type | Description | Notes

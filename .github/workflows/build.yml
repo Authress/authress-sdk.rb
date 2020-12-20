@@ -24,12 +24,13 @@ jobs:
       run: gem install bundler:'~> 2.2.2' && bundle install
 
     - name: Run build
-      run: bundle exec rake --trace
+      run: |
+        bundle exec rake --trace
+        bundle exec rake build --trace
 
     - name: Deploy to RubyGems
       if: github.ref != 'refs/heads/main' && github.event_name == 'push'
       run: |
-        bundle exec rake build --trace
         bundle exec rake publish_git_tag --trace
         gem push pkg/*.gem -V
       env:

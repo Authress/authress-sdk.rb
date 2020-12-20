@@ -1,4 +1,4 @@
-# SwaggerClient::V1rolesPermissions
+# AuthressSdk::V1rolesPermissions
 
 ## Properties
 Name | Type | Description | Notes

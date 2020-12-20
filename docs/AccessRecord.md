@@ -1,4 +1,4 @@
-# SwaggerClient::AccessRecord
+# AuthressSdk::AccessRecord
 
 ## Properties
 Name | Type | Description | Notes

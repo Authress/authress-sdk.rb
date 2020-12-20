@@ -1,4 +1,4 @@
-# SwaggerClient::AccessRecordsApi
+# AuthressSdk::AccessRecordsApi
 
 All URIs are relative to */*
 
@@ -24,20 +24,20 @@ Claim a resource by allowing a user to pick an identifier and receive admin acce
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccessRecordsApi.new
-body = SwaggerClient::Body8.new # Body8 | 
+api_instance = AuthressSdk::AccessRecordsApi.new
+body = AuthressSdk::Body8.new # Body8 | 
 
 
 begin
   #Claim a resource by an allowed user.
   result = api_instance.create_claim(body)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccessRecordsApi->create_claim: #{e}"
 end
 ```
@@ -73,19 +73,19 @@ Invites are used to easily assign permissions to users that have not been create
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccessRecordsApi.new
-body = SwaggerClient::Body5.new # Body5 | 
+api_instance = AuthressSdk::AccessRecordsApi.new
+body = AuthressSdk::Body5.new # Body5 | 
 
 
 begin
   #Create a new invite.
   api_instance.create_invite(body)
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccessRecordsApi->create_invite: #{e}"
 end
 ```
@@ -121,20 +121,20 @@ Specify user roles for specific resources. (Records have a maximum size of ~100K
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccessRecordsApi.new
-body = SwaggerClient::Body3.new # Body3 | 
+api_instance = AuthressSdk::AccessRecordsApi.new
+body = AuthressSdk::Body3.new # Body3 | 
 
 
 begin
   #Create a new access record.
   result = api_instance.create_record(body)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccessRecordsApi->create_record: #{e}"
 end
 ```
@@ -170,19 +170,19 @@ Deletes an invite.         <br><span class=\"badge badge-outline-secondary\">REA
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccessRecordsApi.new
+api_instance = AuthressSdk::AccessRecordsApi.new
 invite_id = 'invite_id_example' # String | The identifier of the invite.
 
 
 begin
   #Delete an invite.
   api_instance.delete_invite(invite_id)
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccessRecordsApi->delete_invite: #{e}"
 end
 ```
@@ -218,19 +218,19 @@ Remove an access record, removing associated permissions from all users in recor
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccessRecordsApi.new
+api_instance = AuthressSdk::AccessRecordsApi.new
 record_id = 'record_id_example' # String | The identifier of the access record.
 
 
 begin
   #Deletes an access record.
   api_instance.delete_record(record_id)
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccessRecordsApi->delete_record: #{e}"
 end
 ```
@@ -266,12 +266,12 @@ Access records contain information assigning permissions to users for resources.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccessRecordsApi.new
+api_instance = AuthressSdk::AccessRecordsApi.new
 record_id = 'record_id_example' # String | The identifier of the access record.
 
 
@@ -279,7 +279,7 @@ begin
   #Get an access record for the account.
   result = api_instance.get_record(record_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccessRecordsApi->get_record: #{e}"
 end
 ```
@@ -315,12 +315,12 @@ Get all account records.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccessRecordsApi.new
+api_instance = AuthressSdk::AccessRecordsApi.new
 opts = { 
   limit: 20, # Integer | Max number of results to return
   cursor: 'cursor_example', # String | Continuation cursor for paging (will automatically be set)
@@ -332,7 +332,7 @@ begin
   #Get all account records.
   result = api_instance.get_records(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccessRecordsApi->get_records: #{e}"
 end
 ```
@@ -371,12 +371,12 @@ Accepts an invite by claiming this invite by this user. The user token used for 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccessRecordsApi.new
+api_instance = AuthressSdk::AccessRecordsApi.new
 invite_id = 'invite_id_example' # String | The identifier of the invite.
 
 
@@ -384,7 +384,7 @@ begin
   #Accept an invite.
   result = api_instance.respond_to_invite(invite_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccessRecordsApi->respond_to_invite: #{e}"
 end
 ```
@@ -420,13 +420,13 @@ Updates an access record adding or removing user permissions to resources. (Reco
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::AccessRecordsApi.new
-body = SwaggerClient::Body4.new # Body4 | 
+api_instance = AuthressSdk::AccessRecordsApi.new
+body = AuthressSdk::Body4.new # Body4 | 
 record_id = 'record_id_example' # String | The identifier of the access record.
 
 
@@ -434,7 +434,7 @@ begin
   #Update an access record.
   result = api_instance.update_record(bodyrecord_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling AccessRecordsApi->update_record: #{e}"
 end
 ```

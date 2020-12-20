@@ -1,4 +1,4 @@
-# SwaggerClient::ServiceClientsApi
+# AuthressSdk::ServiceClientsApi
 
 All URIs are relative to */*
 
@@ -22,20 +22,20 @@ Creates a service client to interact with Authress or any other service on behal
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::ServiceClientsApi.new
-body = SwaggerClient::Body10.new # Body10 | 
+api_instance = AuthressSdk::ServiceClientsApi.new
+body = AuthressSdk::Body10.new # Body10 | 
 
 
 begin
   #Create a new client.
   result = api_instance.create_client(body)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling ServiceClientsApi->create_client: #{e}"
 end
 ```
@@ -71,12 +71,12 @@ Deletes an access key for a client prevent it from being used to authenticate wi
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::ServiceClientsApi.new
+api_instance = AuthressSdk::ServiceClientsApi.new
 client_id = 'client_id_example' # String | The unique identifier of the client.
 key_id = 'key_id_example' # String | The id of the access key to remove from the client.
 
@@ -84,7 +84,7 @@ key_id = 'key_id_example' # String | The id of the access key to remove from the
 begin
   #Remove an access key for a client.
   api_instance.delete_access_key(client_id, key_id)
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling ServiceClientsApi->delete_access_key: #{e}"
 end
 ```
@@ -121,19 +121,19 @@ This deletes the service client.         <br><span class=\"badge badge-outline-s
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::ServiceClientsApi.new
+api_instance = AuthressSdk::ServiceClientsApi.new
 client_id = 'client_id_example' # String | The unique identifier for the client.
 
 
 begin
   #Delete a client.
   api_instance.delete_client(client_id)
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling ServiceClientsApi->delete_client: #{e}"
 end
 ```
@@ -169,12 +169,12 @@ Returns all information related to client except for the private access keys.   
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::ServiceClientsApi.new
+api_instance = AuthressSdk::ServiceClientsApi.new
 client_id = 'client_id_example' # String | The unique identifier for the client.
 
 
@@ -182,7 +182,7 @@ begin
   #Get a client.
   result = api_instance.get_client(client_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling ServiceClientsApi->get_client: #{e}"
 end
 ```
@@ -218,18 +218,18 @@ Returns all clients that the user has access to in the account.         <br><spa
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::ServiceClientsApi.new
+api_instance = AuthressSdk::ServiceClientsApi.new
 
 begin
   #Get clients collection.
   result = api_instance.get_clients
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling ServiceClientsApi->get_clients: #{e}"
 end
 ```
@@ -262,12 +262,12 @@ Create a new access key for the client so that a service can authenticate with A
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::ServiceClientsApi.new
+api_instance = AuthressSdk::ServiceClientsApi.new
 client_id = 'client_id_example' # String | The unique identifier of the client.
 
 
@@ -275,7 +275,7 @@ begin
   #Request a new access key.
   result = api_instance.request_access_key(client_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling ServiceClientsApi->request_access_key: #{e}"
 end
 ```
@@ -311,13 +311,13 @@ Updates a client information.         <br><span class=\"badge badge-outline-seco
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::ServiceClientsApi.new
-body = SwaggerClient::Body11.new # Body11 | 
+api_instance = AuthressSdk::ServiceClientsApi.new
+body = AuthressSdk::Body11.new # Body11 | 
 client_id = 'client_id_example' # String | The unique identifier for the client.
 
 
@@ -325,7 +325,7 @@ begin
   #Update a client.
   result = api_instance.update_client(bodyclient_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling ServiceClientsApi->update_client: #{e}"
 end
 ```

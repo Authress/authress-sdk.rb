@@ -1,4 +1,4 @@
-# SwaggerClient::Invite
+# AuthressSdk::Invite
 
 ## Properties
 Name | Type | Description | Notes

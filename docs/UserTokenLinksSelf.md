@@ -1,4 +1,4 @@
-# SwaggerClient::UserTokenLinksSelf
+# AuthressSdk::UserTokenLinksSelf
 
 ## Properties
 Name | Type | Description | Notes

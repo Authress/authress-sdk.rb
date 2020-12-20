@@ -1,4 +1,4 @@
-# SwaggerClient::PermissionResponse
+# AuthressSdk::PermissionResponse
 
 ## Properties
 Name | Type | Description | Notes

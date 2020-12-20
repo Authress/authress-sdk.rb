@@ -1,4 +1,4 @@
-# SwaggerClient::UserPermissionsApi
+# AuthressSdk::UserPermissionsApi
 
 All URIs are relative to */*
 
@@ -20,12 +20,12 @@ Check to see if a user has permissions to a resource.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::UserPermissionsApi.new
+api_instance = AuthressSdk::UserPermissionsApi.new
 user_id = 'user_id_example' # String | The user to check permissions on
 resource_uri = 'resource_uri_example' # String | The uri path of a resource to validate, must be URL encoded, uri segments are allowed, the resource must be a full path, and permissions are not inherited by sub-resources.
 permission = 'permission_example' # String | Permission to check, '*' and scoped permissions can also be checked here.
@@ -34,7 +34,7 @@ permission = 'permission_example' # String | Permission to check, '*' and scoped
 begin
   #Check to see if a user has permissions to a resource.
   api_instance.authorize_user(user_id, resource_uri, permission)
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling UserPermissionsApi->authorize_user: #{e}"
 end
 ```
@@ -72,12 +72,12 @@ Disable a token.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::UserPermissionsApi.new
+api_instance = AuthressSdk::UserPermissionsApi.new
 user_id = 'user_id_example' # String | The user to create an impersonation token for.
 token_id = 'token_id_example' # String | The relevant token identifier
 
@@ -85,7 +85,7 @@ token_id = 'token_id_example' # String | The relevant token identifier
 begin
   #Disable a token.
   api_instance.disable_user_token(user_id, token_id)
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling UserPermissionsApi->disable_user_token: #{e}"
 end
 ```
@@ -122,12 +122,12 @@ Get the permissions a user has to a resource.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::UserPermissionsApi.new
+api_instance = AuthressSdk::UserPermissionsApi.new
 user_id = 'user_id_example' # String | The user to check permissions on
 resource_uri = 'resource_uri_example' # String | The uri path of a resource to validate, must be URL encoded, uri segments are allowed.
 
@@ -136,7 +136,7 @@ begin
   #Get the permissions a user has to a resource.
   result = api_instance.get_user_permissions_for_resource(user_id, resource_uri)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling UserPermissionsApi->get_user_permissions_for_resource: #{e}"
 end
 ```
@@ -173,12 +173,12 @@ Get the resources a user has to permission to.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::UserPermissionsApi.new
+api_instance = AuthressSdk::UserPermissionsApi.new
 user_id = 'user_id_example' # String | The user to check permissions on
 opts = { 
   resource_uri: '*', # String | The top level uri path of a resource to query for. Will only match explicit or collection resource children. Will not partial match resource names.
@@ -191,7 +191,7 @@ begin
   #Get the resources a user has to permission to.
   result = api_instance.get_user_resources(user_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling UserPermissionsApi->get_user_resources: #{e}"
 end
 ```
@@ -231,13 +231,13 @@ Request a user token with additional configuration.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::UserPermissionsApi.new
-body = SwaggerClient::Body1.new # Body1 | The contents of the permission to set on the token. Will be used instead of the users or clients full permissions. Cannot include permissions that the user or client do not have.
+api_instance = AuthressSdk::UserPermissionsApi.new
+body = AuthressSdk::Body1.new # Body1 | The contents of the permission to set on the token. Will be used instead of the users or clients full permissions. Cannot include permissions that the user or client do not have.
 user_id = 'user_id_example' # String | The user to create an impersonation token for.
 
 
@@ -245,7 +245,7 @@ begin
   #Request a user token with additional configuration.
   result = api_instance.request_user_token(bodyuser_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling UserPermissionsApi->request_user_token: #{e}"
 end
 ```

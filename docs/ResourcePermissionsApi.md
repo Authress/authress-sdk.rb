@@ -1,4 +1,4 @@
-# SwaggerClient::ResourcePermissionsApi
+# AuthressSdk::ResourcePermissionsApi
 
 All URIs are relative to */*
 
@@ -19,12 +19,12 @@ Permissions can be set globally at a resource level. This will apply to all user
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::ResourcePermissionsApi.new
+api_instance = AuthressSdk::ResourcePermissionsApi.new
 resource_uri = 'resource_uri_example' # String | The uri path of a resource to validate, must be URL encoded, uri segments are allowed.
 
 
@@ -32,7 +32,7 @@ begin
   #Get a resource permissions object.
   result = api_instance.get_resource_permissions(resource_uri)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling ResourcePermissionsApi->get_resource_permissions: #{e}"
 end
 ```
@@ -68,12 +68,12 @@ Get the users that have explicit access to this resource.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::ResourcePermissionsApi.new
+api_instance = AuthressSdk::ResourcePermissionsApi.new
 resource_uri = 'resource_uri_example' # String | The uri path of a resource to validate, must be URL encoded, uri segments are allowed.
 opts = { 
   limit: 20, # Integer | Max number of results to return
@@ -84,7 +84,7 @@ begin
   #Get the users that have explicit access to this resource.
   result = api_instance.get_resource_users(resource_uri, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling ResourcePermissionsApi->get_resource_users: #{e}"
 end
 ```
@@ -122,18 +122,18 @@ Permissions can be set globally at a resource level. Lists any resources with a 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::ResourcePermissionsApi.new
+api_instance = AuthressSdk::ResourcePermissionsApi.new
 
 begin
   #List resource configurations.
   result = api_instance.get_resources
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling ResourcePermissionsApi->get_resources: #{e}"
 end
 ```
@@ -166,20 +166,20 @@ Updates the global permissions on a resource. This applies to all users in an ac
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::ResourcePermissionsApi.new
-body = SwaggerClient::Body2.new # Body2 | The contents of the permission to set on the resource. Overwrites existing data.
+api_instance = AuthressSdk::ResourcePermissionsApi.new
+body = AuthressSdk::Body2.new # Body2 | The contents of the permission to set on the resource. Overwrites existing data.
 resource_uri = 'resource_uri_example' # String | The uri path of a resource to validate, must be URL encoded, uri segments are allowed.
 
 
 begin
   #Update a resource permissions object.
   api_instance.update_resource_permissions(bodyresource_uri)
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling ResourcePermissionsApi->update_resource_permissions: #{e}"
 end
 ```

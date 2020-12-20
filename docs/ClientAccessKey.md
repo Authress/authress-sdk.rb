@@ -1,4 +1,4 @@
-# SwaggerClient::ClientAccessKey
+# AuthressSdk::ClientAccessKey
 
 ## Properties
 Name | Type | Description | Notes

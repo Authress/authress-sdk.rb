@@ -1,4 +1,4 @@
-# SwaggerClient::Link
+# AuthressSdk::Link
 
 ## Properties
 Name | Type | Description | Notes

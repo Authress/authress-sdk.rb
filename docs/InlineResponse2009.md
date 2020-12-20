@@ -1,4 +1,4 @@
-# SwaggerClient::InlineResponse2009
+# AuthressSdk::InlineResponse2009
 
 ## Properties
 Name | Type | Description | Notes

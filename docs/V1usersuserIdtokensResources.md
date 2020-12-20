@@ -1,4 +1,4 @@
-# SwaggerClient::V1usersuserIdtokensResources
+# AuthressSdk::V1usersuserIdtokensResources
 
 ## Properties
 Name | Type | Description | Notes

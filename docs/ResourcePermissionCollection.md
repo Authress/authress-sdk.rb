@@ -1,4 +1,4 @@
-# SwaggerClient::ResourcePermissionCollection
+# AuthressSdk::ResourcePermissionCollection
 
 ## Properties
 Name | Type | Description | Notes

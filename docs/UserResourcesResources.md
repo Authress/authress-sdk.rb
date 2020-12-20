@@ -1,4 +1,4 @@
-# SwaggerClient::UserResourcesResources
+# AuthressSdk::UserResourcesResources
 
 ## Properties
 Name | Type | Description | Notes

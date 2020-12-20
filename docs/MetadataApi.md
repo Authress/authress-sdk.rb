@@ -1,4 +1,4 @@
-# SwaggerClient::MetadataApi
+# AuthressSdk::MetadataApi
 
 All URIs are relative to */*
 
@@ -17,12 +17,12 @@ Get the metadata for a resource.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::MetadataApi.new
+api_instance = AuthressSdk::MetadataApi.new
 user_id = 'user_id_example' # String | The owner of the data.
 resource_uri = 'resource_uri_example' # String | The resource the data is attached to.
 
@@ -31,7 +31,7 @@ begin
   #Get the metadata for a resource.
   result = api_instance.get_user_metadata(user_id, resource_uri)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling MetadataApi->get_user_metadata: #{e}"
 end
 ```
@@ -68,13 +68,13 @@ Update the metadata for a resource.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'authress_sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+AuthressSdk.configure do |config|
 end
 
-api_instance = SwaggerClient::MetadataApi.new
-body = SwaggerClient::Body.new # Body | <strong>Important</strong>: Data request object which contains properties identifying the data as well as the metadata itself. While there is limited access, the data saved here should be considered encrypted with best practices (Encrypted in Transit and Encrypted at Rest only). However, while Authress will to store and access in the data in a safe way, usage of this endpoint affirms this data must be application data and not user data. If there are explicit regulations or compliances regarding the data and how it should be saved here, this endpoint must not be used. That includes, but is not limited to--user personal data, data that is protected by GDPR and similar data protection regulations.
+api_instance = AuthressSdk::MetadataApi.new
+body = AuthressSdk::Body.new # Body | <strong>Important</strong>: Data request object which contains properties identifying the data as well as the metadata itself. While there is limited access, the data saved here should be considered encrypted with best practices (Encrypted in Transit and Encrypted at Rest only). However, while Authress will to store and access in the data in a safe way, usage of this endpoint affirms this data must be application data and not user data. If there are explicit regulations or compliances regarding the data and how it should be saved here, this endpoint must not be used. That includes, but is not limited to--user personal data, data that is protected by GDPR and similar data protection regulations.
 user_id = 'user_id_example' # String | The owner of the data.
 resource_uri = 'resource_uri_example' # String | The resource the data is attached to.
 
@@ -83,7 +83,7 @@ begin
   #Update the metadata for a resource.
   result = api_instance.update_user_metadata(bodyuser_idresource_uri)
   p result
-rescue SwaggerClient::ApiError => e
+rescue AuthressSdk::ApiError => e
   puts "Exception when calling MetadataApi->update_user_metadata: #{e}"
 end
 ```

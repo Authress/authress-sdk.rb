@@ -1,4 +1,4 @@
-# SwaggerClient::V1resourcesresourceUriPermissions
+# AuthressSdk::V1resourcesresourceUriPermissions
 
 ## Properties
 Name | Type | Description | Notes
