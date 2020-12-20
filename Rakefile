@@ -1,6 +1,7 @@
 #!/usr/bin/ruby -e
 
 require 'bundler/setup'
+require 'bundler/gem_tasks'
 require 'fileutils'
 require 'rake'
 require 'rake/clean'
@@ -17,14 +18,22 @@ NAME = 'authress-sdk'
 begin
   RSpec::Core::RakeTask.new(:spec)
 
-  task :default => [:spec]
+  task :default => [:info, :spec]
 
   desc "Install new version of #{NAME} locally"
   task :redeploy => [:uninstall, :repackage, :deploy]
 
   task :after_build => [:display_repository, :publish_git_tag, :merge_downstream]
 
-  Gem::PackageTask.new(Gem::Specification.load(Dir['*.gemspec'].first)) do |pkg|
+  task :full_release => [:release, :publish_git_tag]
+
+  GEMSPEC = Gem::Specification.load(Dir['*.gemspec'].first)
+  Gem::PackageTask.new(GEMSPEC) {|pkg|}
+
+  task :info do
+    puts %x[ruby -v]
+    puts "gem version: #{%x[gem -v]}"
+    puts %x[bundle -v]
   end
 
   task :set_owner do
@@ -38,7 +47,7 @@ begin
   end
 
   task :deploy do
-    Bundler.with_clean_env do
+    Bundler.with_unbundled_env do
       #Create local gem repository for testing
       Dir.chdir(PKG_DIR) do
         FileUtils.rm_rf('gems')
@@ -49,6 +58,11 @@ begin
       end
       puts %x[gem install pkg/*.gem --no-ri --no-rdoc -u]
     end
+  end
+
+  task :publish_git_tag do
+    %x[git tag #{GEMSPEC.version}]
+    %x[git push origin #{GEMSPEC.version}]
   end
 rescue LoadError
   # no rspec available
