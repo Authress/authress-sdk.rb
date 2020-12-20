@@ -9,7 +9,7 @@ on:
     - 'release/**'
 
 jobs:
-  nodejs:
+  ruby:
     runs-on: ubuntu-20.04
 
     steps:
@@ -17,20 +17,23 @@ jobs:
     - name: Set up Ruby
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 2.6.0
+        ruby-version: 2.6
+        # bundler-cache: true
 
     - name: Install packages
-      run: gem install bundler && bundle install
+      run: gem install bundler:'~> 2.2.2' && bundle install
 
     - name: Run build
       run: bundle exec rake --trace
 
     - name: Deploy to RubyGems
       if: github.ref != 'refs/heads/main' && github.event_name == 'push'
-      uses: cadwallion/publish-rubygems-action@master
+      run: |
+        bundle exec rake build --trace
+        bundle exec rake publish_git_tag --trace
+        gem push pkg/*.gem -V
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
+        GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_API_KEY}}"
 
     - name: After build
       if: github.ref != 'refs/heads/main' && github.event_name == 'push'

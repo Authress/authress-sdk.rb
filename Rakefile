@@ -1,6 +1,7 @@
 #!/usr/bin/ruby -e
 
 require 'bundler/setup'
+require 'bundler/gem_tasks'
 require 'fileutils'
 require 'rake'
 require 'rake/clean'
@@ -24,8 +25,10 @@ begin
 
   task :after_build => [:display_repository, :publish_git_tag, :merge_downstream]
 
-  Gem::PackageTask.new(Gem::Specification.load(Dir['*.gemspec'].first)) do |pkg|
-  end
+  task :full_release => [:release, :publish_git_tag]
+
+  GEMSPEC = Gem::Specification.load(Dir['*.gemspec'].first)
+  Gem::PackageTask.new(GEMSPEC) {|pkg|}
 
   task :set_owner do
     system("gem owner #{NAME} -a developers@rhosys.ch")
@@ -38,7 +41,7 @@ begin
   end
 
   task :deploy do
-    Bundler.with_clean_env do
+    Bundler.with_unbundled_env do
       #Create local gem repository for testing
       Dir.chdir(PKG_DIR) do
         FileUtils.rm_rf('gems')
@@ -49,6 +52,11 @@ begin
       end
       puts %x[gem install pkg/*.gem --no-ri --no-rdoc -u]
     end
+  end
+
+  task :publish_git_tag do
+    %x[git tag #{GEMSPEC.version}]
+    %x[git push origin #{GEMSPEC.version}]
   end
 rescue LoadError
   # no rspec available
