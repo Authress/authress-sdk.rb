@@ -1,0 +1,39 @@
+on:
+  push:
+    branches:
+    - main
+    - 'release/**'
+  pull_request:
+    branches:
+    - main
+    - 'release/**'
+
+jobs:
+  nodejs:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.0
+
+    - name: Install packages
+      run: gem install bundler && bundle install
+
+    - name: Run build
+      run: bundle exec rake --trace
+
+    - name: Deploy to RubyGems
+      if: github.ref != 'refs/heads/main' && github.event_name == 'push'
+      uses: cadwallion/publish-rubygems-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
+
+    - name: After build
+      if: github.ref != 'refs/heads/main' && github.event_name == 'push'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: echo "setup push to main"
