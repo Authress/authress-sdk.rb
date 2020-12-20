@@ -9,6 +9,8 @@ OpenAPI spec version: v1
 Contact: support@authress.io
 =end
 
+require 'rdoc'
+
 PULL_REQUEST = nil
 BRANCH = ENV['GITHUB_REF']
 BUILD_NUMBER = ENV['GITHUB_RUN_NUMBER']
@@ -29,9 +31,13 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Rhosys", "Authress"]
   s.email       = ["support@authress.io"]
-  s.homepage    = "https://authress.io"
-  s.summary     = "The Authress SDK for Ruby provides authorization as a service with fully compatible REST apis to integrate with Authress at https://authress.io."
-  s.description = File.read(File.expand_path("./README.md"))
+  s.homepage    = "https://github.com/Authress/authress-sdk.rb"
+  s.summary     = "The Authress SDK for Ruby provides authorization as a service with fully compatible REST apis."
+
+  formatter     = RDoc::Markup::ToRdoc.new
+  s.description = <<-EOF
+    This is the Authress SDK used to integrate with the authorization as a service provider Authress at https://authress.io. The full documentation is available in the Github repo Readme: https://github.com/Authress/authress-sdk.rb.
+  EOF
   s.license     = "Apache-2.0"
   s.required_ruby_version = ">= 2.0"
 
@@ -41,7 +47,16 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
 
   s.files         = Dir.glob("{bin,lib}/{**}/{*}", File::FNM_DOTMATCH).select{|f| !(File.basename(f)).match(/^\.+$/)}
+  s.extra_rdoc_files = ['README.md']
   # s.test_files  = `find spec/*`.split("\n")
   s.executables   = []
   s.require_paths = ["lib"]
+  s.metadata = {
+    "bug_tracker_uri"   => "https://github.com/Authress/authress-sdk.rb/issues",
+    "changelog_uri"     => "https://github.com/Authress/authress-sdk.rb/CHANGELOG.md",
+    "documentation_uri" => "https://github.com/Authress/authress-sdk.rb",
+    "homepage_uri"      => "https://github.com/Authress/authress-sdk.rb",
+    "source_code_uri"   => "https://github.com/Authress/authress-sdk.rb",
+    "wiki_uri"          => "https://github.com/Authress/authress-sdk.rb/wiki"
+  }
 end
