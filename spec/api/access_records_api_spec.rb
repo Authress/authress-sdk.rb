@@ -53,7 +53,7 @@ describe 'AccessRecordsApi' do
   # Specify user roles for specific resources. (Records have a maximum size of ~100KB)         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;GRANT: Existing Resource Permissions&lt;/span&gt;
   # @param body 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2008]
+  # @return [AccessRecord]
   describe 'create_record test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -89,7 +89,7 @@ describe 'AccessRecordsApi' do
   # Access records contain information assigning permissions to users for resources.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ (or Admin): Authress:AccessRecords/{recordId}&lt;/span&gt;
   # @param record_id The identifier of the access record.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2008]
+  # @return [AccessRecord]
   describe 'get_record test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -129,7 +129,7 @@ describe 'AccessRecordsApi' do
   # @param body 
   # @param record_id The identifier of the access record.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2008]
+  # @return [AccessRecord]
   describe 'update_record test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

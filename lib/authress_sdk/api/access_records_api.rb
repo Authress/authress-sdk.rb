@@ -127,7 +127,7 @@ module AuthressSdk
     # Specify user roles for specific resources. (Records have a maximum size of ~100KB)         <br><span class=\"badge badge-outline-secondary\">GRANT: Existing Resource Permissions</span>
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2008]
+    # @return [AccessRecord]
     def create_record(body, opts = {})
       data, _status_code, _headers = create_record_with_http_info(body, opts)
       data
@@ -137,7 +137,7 @@ module AuthressSdk
     # Specify user roles for specific resources. (Records have a maximum size of ~100KB)         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;GRANT: Existing Resource Permissions&lt;/span&gt;
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2008, Integer, Hash)>] InlineResponse2008 data, response status code and response headers
+    # @return [Array<(AccessRecord, Integer, Hash)>] AccessRecord data, response status code and response headers
     def create_record_with_http_info(body, opts = {})
       if @authress_client.config.debugging
         @authress_client.config.logger.debug 'Calling API: AccessRecordsApi.create_record ...'
@@ -165,7 +165,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] || @authress_client.object_to_http_body(body) 
 
-      return_type = opts[:return_type] || 'InlineResponse2008' 
+      return_type = opts[:return_type] || 'AccessRecord' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:POST, local_var_path,
@@ -293,7 +293,7 @@ module AuthressSdk
     # Access records contain information assigning permissions to users for resources.         <br><span class=\"badge badge-outline-secondary\">READ (or Admin): Authress:AccessRecords/{recordId}</span>
     # @param record_id The identifier of the access record.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2008]
+    # @return [AccessRecord]
     def get_record(record_id, opts = {})
       data, _status_code, _headers = get_record_with_http_info(record_id, opts)
       data
@@ -303,7 +303,7 @@ module AuthressSdk
     # Access records contain information assigning permissions to users for resources.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ (or Admin): Authress:AccessRecords/{recordId}&lt;/span&gt;
     # @param record_id The identifier of the access record.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2008, Integer, Hash)>] InlineResponse2008 data, response status code and response headers
+    # @return [Array<(AccessRecord, Integer, Hash)>] AccessRecord data, response status code and response headers
     def get_record_with_http_info(record_id, opts = {})
       if @authress_client.config.debugging
         @authress_client.config.logger.debug 'Calling API: AccessRecordsApi.get_record ...'
@@ -329,7 +329,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse2008' 
+      return_type = opts[:return_type] || 'AccessRecord' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,
@@ -471,7 +471,7 @@ module AuthressSdk
     # @param body 
     # @param record_id The identifier of the access record.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2008]
+    # @return [AccessRecord]
     def update_record(body, record_id, opts = {})
       data, _status_code, _headers = update_record_with_http_info(body, record_id, opts)
       data
@@ -482,7 +482,7 @@ module AuthressSdk
     # @param body 
     # @param record_id The identifier of the access record.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2008, Integer, Hash)>] InlineResponse2008 data, response status code and response headers
+    # @return [Array<(AccessRecord, Integer, Hash)>] AccessRecord data, response status code and response headers
     def update_record_with_http_info(body, record_id, opts = {})
       if @authress_client.config.debugging
         @authress_client.config.logger.debug 'Calling API: AccessRecordsApi.update_record ...'
@@ -514,7 +514,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] || @authress_client.object_to_http_body(body) 
 
-      return_type = opts[:return_type] || 'InlineResponse2008' 
+      return_type = opts[:return_type] || 'AccessRecord' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:PUT, local_var_path,

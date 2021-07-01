@@ -24,6 +24,9 @@ module AuthressSdk
     # The list of users this record applies to
     attr_accessor :users
 
+    # The list of groups this record applies to. Users in these groups will be receive access to the resources listed.
+    attr_accessor :groups
+
     # The list of admin that can edit this record even if they do not have global record edit permissions.
     attr_accessor :admins
 
@@ -63,6 +66,7 @@ module AuthressSdk
         :'status' => :'status',
         :'account' => :'account',
         :'users' => :'users',
+        :'groups' => :'groups',
         :'admins' => :'admins',
         :'statements' => :'statements',
         :'links' => :'links'
@@ -78,6 +82,7 @@ module AuthressSdk
         :'status' => :'Object',
         :'account' => :'Object',
         :'users' => :'Object',
+        :'groups' => :'Object',
         :'admins' => :'Object',
         :'statements' => :'Object',
         :'links' => :'Object'
@@ -128,6 +133,12 @@ module AuthressSdk
       if attributes.key?(:'users')
         if (value = attributes[:'users']).is_a?(Array)
           self.users = value
+        end
+      end
+
+      if attributes.key?(:'groups')
+        if (value = attributes[:'groups']).is_a?(Array)
+          self.groups = value
         end
       end
 
@@ -209,6 +220,7 @@ module AuthressSdk
           status == o.status &&
           account == o.account &&
           users == o.users &&
+          groups == o.groups &&
           admins == o.admins &&
           statements == o.statements &&
           links == o.links
@@ -223,7 +235,7 @@ module AuthressSdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [record_id, name, description, status, account, users, admins, statements, links].hash
+      [record_id, name, description, status, account, users, groups, admins, statements, links].hash
     end
 
     # Builds the object from hash

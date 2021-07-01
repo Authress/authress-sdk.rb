@@ -104,7 +104,7 @@ require 'authress-sdk'
 
 begin
   #Create a new access record.
-  new_record = AuthressSdk::Body3.new {
+  new_record = AuthressSdk::AccessRecord.new {
     name: "Access To New Resource #{NewResourceId}",
     users: [{ userId: requestUserId }],
     statements: [{
