@@ -12,6 +12,7 @@ module AuthressSdk
     end
 
     def get_token()
+      # TODO: This should use the JWT creation strategy and not the client api token one
       @client_access_key
     end
   end
