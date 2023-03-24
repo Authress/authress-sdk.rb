@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.name        = "authress-sdk"
   s.version     = VERSION.to_s
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Rhosys", "Authress"]
+  s.authors     = ["Authress"]
   s.email       = ["support@authress.io"]
   s.homepage    = "https://github.com/Authress/authress-sdk.rb"
   s.summary     = "The Authress SDK for Ruby provides authorization as a service with fully compatible REST apis."
@@ -39,12 +39,12 @@ Gem::Specification.new do |s|
     This is the Authress SDK used to integrate with the authorization as a service provider Authress at https://authress.io. The full documentation is available in the Github repo Readme: https://github.com/Authress/authress-sdk.rb.
   EOF
   s.license     = "Apache-2.0"
-  s.required_ruby_version = ">= 2.0"
+  s.required_ruby_version = ">= 3.0"
 
   s.add_runtime_dependency 'typhoeus', '>= 1.0.1'
   s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'
 
-  s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
+  s.add_development_dependency 'rspec'
 
   s.files         = Dir.glob("{bin,lib}/{**}/{*}", File::FNM_DOTMATCH).select{|f| !(File.basename(f)).match(/^\.+$/)}
   s.extra_rdoc_files = ['README.md']

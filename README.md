@@ -22,9 +22,10 @@ require 'authress-sdk'
 require 'authress-sdk'
 
 # create an instance of the API class during service initialization
-# Replace DOMAIN with the Authress domain for your account
+# Replace the base_url with the custom Authress domain for your account
+# https://authress.io/app/#/settings?focus=domain
 AuthressSdk.configure do |config|
-  config.base_url = 'https://DOMAIN.api-REGION.authress.io'
+  config.base_url = 'https://login.company.com'
 end
 
 # on api route
@@ -65,7 +66,7 @@ require 'authress-sdk'
 # Create a service client in the Authress management portal and past the access token here
 # This will generate a token automatically instead of passing the user token to the api
 AuthressSdk.configure do |config|
-  config.base_url = 'https://DOMAIN.api-REGION.authress.io'
+  config.base_url = 'https://login.company.com'
   client_access_key = 'eyJrZXlJ....'
   config.token_provider = AuthressSdk::ServiceClientTokenProvider.new(client_access_key)
 end
