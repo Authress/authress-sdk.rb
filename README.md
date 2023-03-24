@@ -1,4 +1,4 @@
-# authress-sdk.rb
+# Authress SDK for Ruby
 This is the Authress SDK used to integrate with the authorization as a service provider Authress at https://authress.io.
 
 [![Gem Version](https://badge.fury.io/rb/authress-sdk.svg)](http://badge.fury.io/rb/authress-sdk)
@@ -78,7 +78,7 @@ def getResource(resourceId) {
   resource_uri = "resources/#{resourceId}" # String | The uri path of a resource to validate, must be URL encoded, uri segments are allowed, the resource must be a full path, and permissions are not inherited by sub-resources.
   permission = 'READ' # String | Permission to check, '*' and scoped permissions can also be checked here.
   begin
-    #Check to see if a user has permissions to a resource.
+    # Check to see if a user has permissions to a resource.
     api_instance = AuthressSdk::UserPermissionsApi.new
     api_instance.authorize_user(user_id, resource_uri, permission)
   rescue AuthressSdk::ApiError => e
@@ -103,7 +103,7 @@ You may receive **User does not have sufficient access to grant permissions to r
 require 'authress-sdk'
 
 begin
-  #Create a new access record.
+  # Create a new access record.
   new_record = AuthressSdk::AccessRecord.new {
     name: "Access To New Resource #{NewResourceId}",
     users: [{ userId: requestUserId }],
@@ -121,6 +121,3 @@ rescue AuthressSdk::ApiError => e
   raise
 end
 ```
-
-### Early release
-* Add in access_token handling to client
