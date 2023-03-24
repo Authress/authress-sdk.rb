@@ -17,6 +17,8 @@ require 'authress-sdk'
 
 ## Getting started examples
 
+For more details on common use cases using Authress checkout the [Authress Knowledge Base](https://authress.io/knowledge-base/docs/category/introduction).
+
 ### Authorize using a user token
 ```rb
 require 'authress-sdk'
