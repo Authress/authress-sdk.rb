@@ -290,25 +290,5 @@ module AuthressSdk
         obj
       end
     end
-
-    # Build parameter value according to the given collection format.
-    # @param [String] collection_format one of :csv, :ssv, :tsv, :pipes and :multi
-    def build_collection_param(param, collection_format)
-      case collection_format
-      when :csv
-        param.join(',')
-      when :ssv
-        param.join(' ')
-      when :tsv
-        param.join("\t")
-      when :pipes
-        param.join('|')
-      when :multi
-        # return the array directly as typhoeus will handle it as expected
-        param
-      else
-        fail "unknown collection format: #{collection_format.inspect}"
-      end
-    end
   end
 end

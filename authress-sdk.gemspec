@@ -39,7 +39,7 @@ Gem::Specification.new do |s|
     This is the Authress SDK used to integrate with the authorization as a service provider Authress at https://authress.io. The full documentation is available in the Github repo Readme: https://github.com/Authress/authress-sdk.rb.
   EOF
   s.license     = "Apache-2.0"
-  s.required_ruby_version = ">= 3.0"
+  s.required_ruby_version = ">= 2.7"
 
   s.add_runtime_dependency 'typhoeus', '>= 1.0.1'
   s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'

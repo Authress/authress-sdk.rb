@@ -1,8 +1,6 @@
 require 'date'
 require 'json'
 require 'logger'
-require 'tempfile'
-require 'typhoeus'
 require 'uri'
 
 module AuthressSdk

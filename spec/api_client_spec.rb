@@ -47,35 +47,6 @@ describe AuthressSdk::AuthressClient do
     end
   end
 
-  describe '#build_collection_param' do
-    let(:param) { ['aa', 'bb', 'cc'] }
-    let(:authress_client) { AuthressSdk::AuthressClient.new }
-
-    it 'works for csv' do
-      expect(authress_client.build_collection_param(param, :csv)).to eq('aa,bb,cc')
-    end
-
-    it 'works for ssv' do
-      expect(authress_client.build_collection_param(param, :ssv)).to eq('aa bb cc')
-    end
-
-    it 'works for tsv' do
-      expect(authress_client.build_collection_param(param, :tsv)).to eq("aa\tbb\tcc")
-    end
-
-    it 'works for pipes' do
-      expect(authress_client.build_collection_param(param, :pipes)).to eq('aa|bb|cc')
-    end
-
-    it 'works for multi' do
-      expect(authress_client.build_collection_param(param, :multi)).to eq(['aa', 'bb', 'cc'])
-    end
-
-    it 'fails for invalid collection format' do
-      expect(proc { authress_client.build_collection_param(param, :INVALID) }).to raise_error(RuntimeError, 'unknown collection format: :INVALID')
-    end
-  end
-
   describe '#json_mime?' do
     let(:authress_client) { AuthressSdk::AuthressClient.new }
 
