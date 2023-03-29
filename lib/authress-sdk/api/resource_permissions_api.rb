@@ -25,11 +25,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse2005, Integer, Hash)>] InlineResponse2005 data, response status code and response headers
     def get_resource_permissions_with_http_info(resource_uri, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: ResourcePermissionsApi.get_resource_permissions ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: ResourcePermissionsApi.get_resource_permissions ...'
       end
       # verify the required parameter 'resource_uri' is set
-      if @authress_client.config.client_side_validation && resource_uri.nil?
+      if @authress_client.config[:client_side_validation] && resource_uri.nil?
         fail ArgumentError, "Missing the required parameter 'resource_uri' when calling ResourcePermissionsApi.get_resource_permissions"
       end
       # resource path
@@ -60,8 +60,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: ResourcePermissionsApi#get_resource_permissions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: ResourcePermissionsApi#get_resource_permissions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -85,11 +85,11 @@ module AuthressSdk
     # @option opts [String] :cursor Continuation cursor for paging (will automatically be set)
     # @return [Array<(InlineResponse2006, Integer, Hash)>] InlineResponse2006 data, response status code and response headers
     def get_resource_users_with_http_info(resource_uri, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: ResourcePermissionsApi.get_resource_users ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: ResourcePermissionsApi.get_resource_users ...'
       end
       # verify the required parameter 'resource_uri' is set
-      if @authress_client.config.client_side_validation && resource_uri.nil?
+      if @authress_client.config[:client_side_validation] && resource_uri.nil?
         fail ArgumentError, "Missing the required parameter 'resource_uri' when calling ResourcePermissionsApi.get_resource_users"
       end
       # resource path
@@ -122,8 +122,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: ResourcePermissionsApi#get_resource_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: ResourcePermissionsApi#get_resource_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -141,8 +141,8 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse2004, Integer, Hash)>] InlineResponse2004 data, response status code and response headers
     def get_resources_with_http_info(opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: ResourcePermissionsApi.get_resources ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: ResourcePermissionsApi.get_resources ...'
       end
       # resource path
       local_var_path = '/v1/resources'
@@ -172,8 +172,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: ResourcePermissionsApi#get_resources\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: ResourcePermissionsApi#get_resources\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -195,15 +195,15 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def update_resource_permissions_with_http_info(body, resource_uri, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: ResourcePermissionsApi.update_resource_permissions ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: ResourcePermissionsApi.update_resource_permissions ...'
       end
       # verify the required parameter 'body' is set
-      if @authress_client.config.client_side_validation && body.nil?
+      if @authress_client.config[:client_side_validation] && body.nil?
         fail ArgumentError, "Missing the required parameter 'body' when calling ResourcePermissionsApi.update_resource_permissions"
       end
       # verify the required parameter 'resource_uri' is set
-      if @authress_client.config.client_side_validation && resource_uri.nil?
+      if @authress_client.config[:client_side_validation] && resource_uri.nil?
         fail ArgumentError, "Missing the required parameter 'resource_uri' when calling ResourcePermissionsApi.update_resource_permissions"
       end
       # resource path
@@ -234,8 +234,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: ResourcePermissionsApi#update_resource_permissions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: ResourcePermissionsApi#update_resource_permissions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

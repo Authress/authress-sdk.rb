@@ -25,11 +25,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse2009, Integer, Hash)>] InlineResponse2009 data, response status code and response headers
     def get_account_with_http_info(account_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccountsApi.get_account ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccountsApi.get_account ...'
       end
       # verify the required parameter 'account_id' is set
-      if @authress_client.config.client_side_validation && account_id.nil?
+      if @authress_client.config[:client_side_validation] && account_id.nil?
         fail ArgumentError, "Missing the required parameter 'account_id' when calling AccountsApi.get_account"
       end
       # resource path
@@ -60,8 +60,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccountsApi#get_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccountsApi#get_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -79,8 +79,8 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20012, Integer, Hash)>] InlineResponse20012 data, response status code and response headers
     def get_account_identities_with_http_info(opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccountsApi.get_account_identities ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccountsApi.get_account_identities ...'
       end
       # resource path
       local_var_path = '/v1/identities'
@@ -110,8 +110,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccountsApi#get_account_identities\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccountsApi#get_account_identities\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -129,8 +129,8 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20011, Integer, Hash)>] InlineResponse20011 data, response status code and response headers
     def get_accounts_with_http_info(opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccountsApi.get_accounts ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccountsApi.get_accounts ...'
       end
       # resource path
       local_var_path = '/v1/accounts'
@@ -160,8 +160,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccountsApi#get_accounts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccountsApi#get_accounts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -181,11 +181,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def link_identity_with_http_info(body, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccountsApi.link_identity ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccountsApi.link_identity ...'
       end
       # verify the required parameter 'body' is set
-      if @authress_client.config.client_side_validation && body.nil?
+      if @authress_client.config[:client_side_validation] && body.nil?
         fail ArgumentError, "Missing the required parameter 'body' when calling AccountsApi.link_identity"
       end
       # resource path
@@ -216,8 +216,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccountsApi#link_identity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccountsApi#link_identity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -8,11 +8,10 @@ module AuthressSdk
   class << self
     # Customize default settings for the SDK using block.
     #   AuthressSdk.configure do |config|
-    #     config.username = "xxx"
-    #     config.password = "xxx"
+    #     config.base_url = "xxx"
     #   end
     def configure
-      AuthressClient.default
+      yield AuthressClient.default
     end
   end
 end

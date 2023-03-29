@@ -25,11 +25,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20014, Integer, Hash)>] InlineResponse20014 data, response status code and response headers
     def create_client_with_http_info(body, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: ServiceClientsApi.create_client ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: ServiceClientsApi.create_client ...'
       end
       # verify the required parameter 'body' is set
-      if @authress_client.config.client_side_validation && body.nil?
+      if @authress_client.config[:client_side_validation] && body.nil?
         fail ArgumentError, "Missing the required parameter 'body' when calling ServiceClientsApi.create_client"
       end
       # resource path
@@ -62,8 +62,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: ServiceClientsApi#create_client\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: ServiceClientsApi#create_client\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -85,15 +85,15 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def delete_access_key_with_http_info(client_id, key_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: ServiceClientsApi.delete_access_key ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: ServiceClientsApi.delete_access_key ...'
       end
       # verify the required parameter 'client_id' is set
-      if @authress_client.config.client_side_validation && client_id.nil?
+      if @authress_client.config[:client_side_validation] && client_id.nil?
         fail ArgumentError, "Missing the required parameter 'client_id' when calling ServiceClientsApi.delete_access_key"
       end
       # verify the required parameter 'key_id' is set
-      if @authress_client.config.client_side_validation && key_id.nil?
+      if @authress_client.config[:client_side_validation] && key_id.nil?
         fail ArgumentError, "Missing the required parameter 'key_id' when calling ServiceClientsApi.delete_access_key"
       end
       # resource path
@@ -122,8 +122,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: ServiceClientsApi#delete_access_key\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: ServiceClientsApi#delete_access_key\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -143,11 +143,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def delete_client_with_http_info(client_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: ServiceClientsApi.delete_client ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: ServiceClientsApi.delete_client ...'
       end
       # verify the required parameter 'client_id' is set
-      if @authress_client.config.client_side_validation && client_id.nil?
+      if @authress_client.config[:client_side_validation] && client_id.nil?
         fail ArgumentError, "Missing the required parameter 'client_id' when calling ServiceClientsApi.delete_client"
       end
       # resource path
@@ -176,8 +176,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: ServiceClientsApi#delete_client\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: ServiceClientsApi#delete_client\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -197,11 +197,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20014, Integer, Hash)>] InlineResponse20014 data, response status code and response headers
     def get_client_with_http_info(client_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: ServiceClientsApi.get_client ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: ServiceClientsApi.get_client ...'
       end
       # verify the required parameter 'client_id' is set
-      if @authress_client.config.client_side_validation && client_id.nil?
+      if @authress_client.config[:client_side_validation] && client_id.nil?
         fail ArgumentError, "Missing the required parameter 'client_id' when calling ServiceClientsApi.get_client"
       end
       # resource path
@@ -232,8 +232,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: ServiceClientsApi#get_client\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: ServiceClientsApi#get_client\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -251,8 +251,8 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20013, Integer, Hash)>] InlineResponse20013 data, response status code and response headers
     def get_clients_with_http_info(opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: ServiceClientsApi.get_clients ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: ServiceClientsApi.get_clients ...'
       end
       # resource path
       local_var_path = '/v1/clients'
@@ -282,8 +282,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: ServiceClientsApi#get_clients\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: ServiceClientsApi#get_clients\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -303,11 +303,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20015, Integer, Hash)>] InlineResponse20015 data, response status code and response headers
     def request_access_key_with_http_info(client_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: ServiceClientsApi.request_access_key ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: ServiceClientsApi.request_access_key ...'
       end
       # verify the required parameter 'client_id' is set
-      if @authress_client.config.client_side_validation && client_id.nil?
+      if @authress_client.config[:client_side_validation] && client_id.nil?
         fail ArgumentError, "Missing the required parameter 'client_id' when calling ServiceClientsApi.request_access_key"
       end
       # resource path
@@ -338,8 +338,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: ServiceClientsApi#request_access_key\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: ServiceClientsApi#request_access_key\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -361,15 +361,15 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20014, Integer, Hash)>] InlineResponse20014 data, response status code and response headers
     def update_client_with_http_info(body, client_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: ServiceClientsApi.update_client ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: ServiceClientsApi.update_client ...'
       end
       # verify the required parameter 'body' is set
-      if @authress_client.config.client_side_validation && body.nil?
+      if @authress_client.config[:client_side_validation] && body.nil?
         fail ArgumentError, "Missing the required parameter 'body' when calling ServiceClientsApi.update_client"
       end
       # verify the required parameter 'client_id' is set
-      if @authress_client.config.client_side_validation && client_id.nil?
+      if @authress_client.config[:client_side_validation] && client_id.nil?
         fail ArgumentError, "Missing the required parameter 'client_id' when calling ServiceClientsApi.update_client"
       end
       # resource path
@@ -402,8 +402,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: ServiceClientsApi#update_client\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: ServiceClientsApi#update_client\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

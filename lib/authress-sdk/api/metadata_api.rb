@@ -27,15 +27,15 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse2001, Integer, Hash)>] InlineResponse2001 data, response status code and response headers
     def get_user_metadata_with_http_info(user_id, resource_uri, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: MetadataApi.get_user_metadata ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: MetadataApi.get_user_metadata ...'
       end
       # verify the required parameter 'user_id' is set
-      if @authress_client.config.client_side_validation && user_id.nil?
+      if @authress_client.config[:client_side_validation] && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling MetadataApi.get_user_metadata"
       end
       # verify the required parameter 'resource_uri' is set
-      if @authress_client.config.client_side_validation && resource_uri.nil?
+      if @authress_client.config[:client_side_validation] && resource_uri.nil?
         fail ArgumentError, "Missing the required parameter 'resource_uri' when calling MetadataApi.get_user_metadata"
       end
       # resource path
@@ -66,8 +66,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: MetadataApi#get_user_metadata\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: MetadataApi#get_user_metadata\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -91,19 +91,19 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse2001, Integer, Hash)>] InlineResponse2001 data, response status code and response headers
     def update_user_metadata_with_http_info(body, user_id, resource_uri, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: MetadataApi.update_user_metadata ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: MetadataApi.update_user_metadata ...'
       end
       # verify the required parameter 'body' is set
-      if @authress_client.config.client_side_validation && body.nil?
+      if @authress_client.config[:client_side_validation] && body.nil?
         fail ArgumentError, "Missing the required parameter 'body' when calling MetadataApi.update_user_metadata"
       end
       # verify the required parameter 'user_id' is set
-      if @authress_client.config.client_side_validation && user_id.nil?
+      if @authress_client.config[:client_side_validation] && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling MetadataApi.update_user_metadata"
       end
       # verify the required parameter 'resource_uri' is set
-      if @authress_client.config.client_side_validation && resource_uri.nil?
+      if @authress_client.config[:client_side_validation] && resource_uri.nil?
         fail ArgumentError, "Missing the required parameter 'resource_uri' when calling MetadataApi.update_user_metadata"
       end
       # resource path
@@ -136,8 +136,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: MetadataApi#update_user_metadata\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: MetadataApi#update_user_metadata\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

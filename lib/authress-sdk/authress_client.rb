@@ -103,7 +103,7 @@ module AuthressSdk
         :headers => header_params,
         :params => query_params,
         :ssl_verifypeer => true,
-        :ssl_verifyhost => true,
+        :ssl_verifyhost => _verify_ssl_host,
         :verbose => false
       }
 
@@ -242,6 +242,7 @@ module AuthressSdk
     def build_request_url(path)
       # Add leading and trailing slashes to path
       path = "/#{path}".gsub(/\/+/, '/')
+      puts self.base_url
       @base_url + path
     end
 

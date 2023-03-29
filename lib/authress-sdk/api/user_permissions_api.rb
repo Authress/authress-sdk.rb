@@ -29,19 +29,19 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def authorize_user_with_http_info(user_id, resource_uri, permission, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: UserPermissionsApi.authorize_user ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: UserPermissionsApi.authorize_user ...'
       end
       # verify the required parameter 'user_id' is set
-      if @authress_client.config.client_side_validation && user_id.nil?
+      if @authress_client.config[:client_side_validation] && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserPermissionsApi.authorize_user"
       end
       # verify the required parameter 'resource_uri' is set
-      if @authress_client.config.client_side_validation && resource_uri.nil?
+      if @authress_client.config[:client_side_validation] && resource_uri.nil?
         fail ArgumentError, "Missing the required parameter 'resource_uri' when calling UserPermissionsApi.authorize_user"
       end
       # verify the required parameter 'permission' is set
-      if @authress_client.config.client_side_validation && permission.nil?
+      if @authress_client.config[:client_side_validation] && permission.nil?
         fail ArgumentError, "Missing the required parameter 'permission' when calling UserPermissionsApi.authorize_user"
       end
       # resource path
@@ -70,8 +70,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: UserPermissionsApi#authorize_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: UserPermissionsApi#authorize_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -93,15 +93,15 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def disable_user_token_with_http_info(user_id, token_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: UserPermissionsApi.disable_user_token ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: UserPermissionsApi.disable_user_token ...'
       end
       # verify the required parameter 'user_id' is set
-      if @authress_client.config.client_side_validation && user_id.nil?
+      if @authress_client.config[:client_side_validation] && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserPermissionsApi.disable_user_token"
       end
       # verify the required parameter 'token_id' is set
-      if @authress_client.config.client_side_validation && token_id.nil?
+      if @authress_client.config[:client_side_validation] && token_id.nil?
         fail ArgumentError, "Missing the required parameter 'token_id' when calling UserPermissionsApi.disable_user_token"
       end
       # resource path
@@ -130,8 +130,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: UserPermissionsApi#disable_user_token\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: UserPermissionsApi#disable_user_token\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -153,15 +153,15 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse2002, Integer, Hash)>] InlineResponse2002 data, response status code and response headers
     def get_user_permissions_for_resource_with_http_info(user_id, resource_uri, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: UserPermissionsApi.get_user_permissions_for_resource ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: UserPermissionsApi.get_user_permissions_for_resource ...'
       end
       # verify the required parameter 'user_id' is set
-      if @authress_client.config.client_side_validation && user_id.nil?
+      if @authress_client.config[:client_side_validation] && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserPermissionsApi.get_user_permissions_for_resource"
       end
       # verify the required parameter 'resource_uri' is set
-      if @authress_client.config.client_side_validation && resource_uri.nil?
+      if @authress_client.config[:client_side_validation] && resource_uri.nil?
         fail ArgumentError, "Missing the required parameter 'resource_uri' when calling UserPermissionsApi.get_user_permissions_for_resource"
       end
       # resource path
@@ -192,8 +192,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: UserPermissionsApi#get_user_permissions_for_resource\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: UserPermissionsApi#get_user_permissions_for_resource\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -221,11 +221,11 @@ module AuthressSdk
     # @option opts [String] :cursor Continuation cursor for paging (will automatically be set)
     # @return [Array<(InlineResponse200, Integer, Hash)>] InlineResponse200 data, response status code and response headers
     def get_user_resources_with_http_info(user_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: UserPermissionsApi.get_user_resources ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: UserPermissionsApi.get_user_resources ...'
       end
       # verify the required parameter 'user_id' is set
-      if @authress_client.config.client_side_validation && user_id.nil?
+      if @authress_client.config[:client_side_validation] && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserPermissionsApi.get_user_resources"
       end
       # resource path
@@ -260,8 +260,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: UserPermissionsApi#get_user_resources\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: UserPermissionsApi#get_user_resources\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -283,15 +283,15 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse2003, Integer, Hash)>] InlineResponse2003 data, response status code and response headers
     def request_user_token_with_http_info(body, user_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: UserPermissionsApi.request_user_token ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: UserPermissionsApi.request_user_token ...'
       end
       # verify the required parameter 'body' is set
-      if @authress_client.config.client_side_validation && body.nil?
+      if @authress_client.config[:client_side_validation] && body.nil?
         fail ArgumentError, "Missing the required parameter 'body' when calling UserPermissionsApi.request_user_token"
       end
       # verify the required parameter 'user_id' is set
-      if @authress_client.config.client_side_validation && user_id.nil?
+      if @authress_client.config[:client_side_validation] && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserPermissionsApi.request_user_token"
       end
       # resource path
@@ -324,8 +324,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: UserPermissionsApi#request_user_token\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: UserPermissionsApi#request_user_token\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -25,11 +25,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
     def create_claim_with_http_info(body, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccessRecordsApi.create_claim ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccessRecordsApi.create_claim ...'
       end
       # verify the required parameter 'body' is set
-      if @authress_client.config.client_side_validation && body.nil?
+      if @authress_client.config[:client_side_validation] && body.nil?
         fail ArgumentError, "Missing the required parameter 'body' when calling AccessRecordsApi.create_claim"
       end
       # resource path
@@ -62,8 +62,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccessRecordsApi#create_claim\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccessRecordsApi#create_claim\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -83,11 +83,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def create_invite_with_http_info(body, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccessRecordsApi.create_invite ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccessRecordsApi.create_invite ...'
       end
       # verify the required parameter 'body' is set
-      if @authress_client.config.client_side_validation && body.nil?
+      if @authress_client.config[:client_side_validation] && body.nil?
         fail ArgumentError, "Missing the required parameter 'body' when calling AccessRecordsApi.create_invite"
       end
       # resource path
@@ -118,8 +118,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccessRecordsApi#create_invite\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccessRecordsApi#create_invite\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -139,11 +139,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(AccessRecord, Integer, Hash)>] AccessRecord data, response status code and response headers
     def create_record_with_http_info(body, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccessRecordsApi.create_record ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccessRecordsApi.create_record ...'
       end
       # verify the required parameter 'body' is set
-      if @authress_client.config.client_side_validation && body.nil?
+      if @authress_client.config[:client_side_validation] && body.nil?
         fail ArgumentError, "Missing the required parameter 'body' when calling AccessRecordsApi.create_record"
       end
       # resource path
@@ -176,8 +176,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccessRecordsApi#create_record\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccessRecordsApi#create_record\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -197,11 +197,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def delete_invite_with_http_info(invite_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccessRecordsApi.delete_invite ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccessRecordsApi.delete_invite ...'
       end
       # verify the required parameter 'invite_id' is set
-      if @authress_client.config.client_side_validation && invite_id.nil?
+      if @authress_client.config[:client_side_validation] && invite_id.nil?
         fail ArgumentError, "Missing the required parameter 'invite_id' when calling AccessRecordsApi.delete_invite"
       end
       # resource path
@@ -230,8 +230,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccessRecordsApi#delete_invite\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccessRecordsApi#delete_invite\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -251,11 +251,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def delete_record_with_http_info(record_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccessRecordsApi.delete_record ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccessRecordsApi.delete_record ...'
       end
       # verify the required parameter 'record_id' is set
-      if @authress_client.config.client_side_validation && record_id.nil?
+      if @authress_client.config[:client_side_validation] && record_id.nil?
         fail ArgumentError, "Missing the required parameter 'record_id' when calling AccessRecordsApi.delete_record"
       end
       # resource path
@@ -284,8 +284,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccessRecordsApi#delete_record\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccessRecordsApi#delete_record\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -305,11 +305,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(AccessRecord, Integer, Hash)>] AccessRecord data, response status code and response headers
     def get_record_with_http_info(record_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccessRecordsApi.get_record ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccessRecordsApi.get_record ...'
       end
       # verify the required parameter 'record_id' is set
-      if @authress_client.config.client_side_validation && record_id.nil?
+      if @authress_client.config[:client_side_validation] && record_id.nil?
         fail ArgumentError, "Missing the required parameter 'record_id' when calling AccessRecordsApi.get_record"
       end
       # resource path
@@ -340,8 +340,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccessRecordsApi#get_record\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccessRecordsApi#get_record\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -367,10 +367,10 @@ module AuthressSdk
     # @option opts [String] :status Filter records by their current status.
     # @return [Array<(InlineResponse2007, Integer, Hash)>] InlineResponse2007 data, response status code and response headers
     def get_records_with_http_info(opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccessRecordsApi.get_records ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccessRecordsApi.get_records ...'
       end
-      if @authress_client.config.client_side_validation && opts[:'status'] && !['ACTIVE', 'DELETED'].include?(opts[:'status'])
+      if @authress_client.config[:client_side_validation] && opts[:'status'] && !['ACTIVE', 'DELETED'].include?(opts[:'status'])
         fail ArgumentError, 'invalid value for "status", must be one of ACTIVE, DELETED'
       end
       # resource path
@@ -405,8 +405,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccessRecordsApi#get_records\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccessRecordsApi#get_records\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -426,11 +426,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse2009, Integer, Hash)>] InlineResponse2009 data, response status code and response headers
     def respond_to_invite_with_http_info(invite_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccessRecordsApi.respond_to_invite ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccessRecordsApi.respond_to_invite ...'
       end
       # verify the required parameter 'invite_id' is set
-      if @authress_client.config.client_side_validation && invite_id.nil?
+      if @authress_client.config[:client_side_validation] && invite_id.nil?
         fail ArgumentError, "Missing the required parameter 'invite_id' when calling AccessRecordsApi.respond_to_invite"
       end
       # resource path
@@ -461,8 +461,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccessRecordsApi#respond_to_invite\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccessRecordsApi#respond_to_invite\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -484,15 +484,15 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(AccessRecord, Integer, Hash)>] AccessRecord data, response status code and response headers
     def update_record_with_http_info(body, record_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: AccessRecordsApi.update_record ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: AccessRecordsApi.update_record ...'
       end
       # verify the required parameter 'body' is set
-      if @authress_client.config.client_side_validation && body.nil?
+      if @authress_client.config[:client_side_validation] && body.nil?
         fail ArgumentError, "Missing the required parameter 'body' when calling AccessRecordsApi.update_record"
       end
       # verify the required parameter 'record_id' is set
-      if @authress_client.config.client_side_validation && record_id.nil?
+      if @authress_client.config[:client_side_validation] && record_id.nil?
         fail ArgumentError, "Missing the required parameter 'record_id' when calling AccessRecordsApi.update_record"
       end
       # resource path
@@ -525,8 +525,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: AccessRecordsApi#update_record\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: AccessRecordsApi#update_record\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

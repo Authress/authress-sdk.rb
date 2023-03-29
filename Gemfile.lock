@@ -3,7 +3,7 @@ PATH
   specs:
     authress-sdk (0.0.0.0)
       json (~> 2.1, >= 2.1.0)
-      typhoeus (>= 1.0.1)
+      typhoeus (>= 1.4)
 
 GEM
   remote: https://rubygems.org/

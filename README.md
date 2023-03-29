@@ -34,11 +34,10 @@ end
 [route('/resources/<resourceId>')]
 def getResource(resourceId)
   # Get the user token and pass it to authress
-  authorizationToken = request.headers.get('authorization')
-  AuthressSdk::AuthressClient.set_token(authorizationToken)
+  user_identity = AuthressSdk::AuthressClient.verify_token(request.headers.get('authorization'))
 
   # Check Authress to authorize the user
-  user_id = 'user_id_example' # String | The user to check permissions on
+  user_id = user_identity.sub
   resource_uri = "resources/#{resourceId}" # String | The uri path of a resource to validate, must be URL encoded, uri segments are allowed, the resource must be a full path, and permissions are not inherited by sub-resources.
   permission = 'READ' # String | Permission to check, '*' and scoped permissions can also be checked here.
   begin
@@ -77,7 +76,10 @@ end
 [route('/resources/<resourceId>')]
 def getResource(resourceId) {
   # Check Authress to authorize the user
-  user_id = 'user_id_example' # String | The user to check permissions on
+  user_identity = AuthressSdk::AuthressClient.verify_token(request.headers.get('authorization'))
+
+  # Check Authress to authorize the user
+  user_id = user_identity.sub
   resource_uri = "resources/#{resourceId}" # String | The uri path of a resource to validate, must be URL encoded, uri segments are allowed, the resource must be a full path, and permissions are not inherited by sub-resources.
   permission = 'READ' # String | Permission to check, '*' and scoped permissions can also be checked here.
   begin
@@ -107,9 +109,10 @@ require 'authress-sdk'
 
 begin
   # Create a new access record.
+  user_identity = AuthressSdk::AuthressClient.verify_token(request.headers.get('authorization'))
   new_record = AuthressSdk::AccessRecord.new {
     name: "Access To New Resource #{NewResourceId}",
-    users: [{ userId: requestUserId }],
+    users: [{ userId: user_identity.sub }],
     statements: [{
       resources: [{ resourceUri: "Resources/#{NewResourceId}" }],
       # Owner by default gives full control over this new resource, including the ability to grant others access as well.

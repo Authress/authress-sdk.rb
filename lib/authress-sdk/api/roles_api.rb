@@ -25,11 +25,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20010, Integer, Hash)>] InlineResponse20010 data, response status code and response headers
     def create_role_with_http_info(body, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: RolesApi.create_role ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: RolesApi.create_role ...'
       end
       # verify the required parameter 'body' is set
-      if @authress_client.config.client_side_validation && body.nil?
+      if @authress_client.config[:client_side_validation] && body.nil?
         fail ArgumentError, "Missing the required parameter 'body' when calling RolesApi.create_role"
       end
       # resource path
@@ -62,8 +62,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: RolesApi#create_role\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: RolesApi#create_role\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -83,11 +83,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def delete_role_with_http_info(role_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: RolesApi.delete_role ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: RolesApi.delete_role ...'
       end
       # verify the required parameter 'role_id' is set
-      if @authress_client.config.client_side_validation && role_id.nil?
+      if @authress_client.config[:client_side_validation] && role_id.nil?
         fail ArgumentError, "Missing the required parameter 'role_id' when calling RolesApi.delete_role"
       end
       # resource path
@@ -116,8 +116,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: RolesApi#delete_role\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: RolesApi#delete_role\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -137,11 +137,11 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20010, Integer, Hash)>] InlineResponse20010 data, response status code and response headers
     def get_role_with_http_info(role_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: RolesApi.get_role ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: RolesApi.get_role ...'
       end
       # verify the required parameter 'role_id' is set
-      if @authress_client.config.client_side_validation && role_id.nil?
+      if @authress_client.config[:client_side_validation] && role_id.nil?
         fail ArgumentError, "Missing the required parameter 'role_id' when calling RolesApi.get_role"
       end
       # resource path
@@ -172,8 +172,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: RolesApi#get_role\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: RolesApi#get_role\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -195,15 +195,15 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20010, Integer, Hash)>] InlineResponse20010 data, response status code and response headers
     def update_role_with_http_info(body, role_id, opts = {})
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug 'Calling API: RolesApi.update_role ...'
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug 'Calling API: RolesApi.update_role ...'
       end
       # verify the required parameter 'body' is set
-      if @authress_client.config.client_side_validation && body.nil?
+      if @authress_client.config[:client_side_validation] && body.nil?
         fail ArgumentError, "Missing the required parameter 'body' when calling RolesApi.update_role"
       end
       # verify the required parameter 'role_id' is set
-      if @authress_client.config.client_side_validation && role_id.nil?
+      if @authress_client.config[:client_side_validation] && role_id.nil?
         fail ArgumentError, "Missing the required parameter 'role_id' when calling RolesApi.update_role"
       end
       # resource path
@@ -236,8 +236,8 @@ module AuthressSdk
         :auth_names => auth_names,
         :return_type => return_type)
 
-      if @authress_client.config.debugging
-        @authress_client.config.logger.debug "API called: RolesApi#update_role\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      if @authress_client.config[:debugging]
+        @authress_client.config[:logger].debug "API called: RolesApi#update_role\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
