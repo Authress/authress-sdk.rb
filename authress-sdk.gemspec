@@ -43,6 +43,9 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'typhoeus', '>= 1.4'
   s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'
+  s.add_runtime_dependency 'omniauth-oauth2'
+  s.add_runtime_dependency 'jwt'
+  s.add_runtime_dependency 'oauth2'
 
   s.add_development_dependency 'rspec'
 

@@ -35,6 +35,13 @@ module AuthressSdk
       @@default ||= AuthressClient.new
     end
 
+    # Normalize a domain to a URL.
+    def custom_domain_url
+      domain_url = URI(@base_url)
+      domain_url = URI("https://#{domain_url}") if domain_url.scheme.nil?
+      domain_url.to_s
+    end
+
     def set_token(token)
       @token_provider = ConstantTokenProvider.new(token)
     end
@@ -242,8 +249,7 @@ module AuthressSdk
     def build_request_url(path)
       # Add leading and trailing slashes to path
       path = "/#{path}".gsub(/\/+/, '/')
-      puts self.base_url
-      @base_url + path
+      custom_domain_url + path
     end
 
     # Return Accept header based on an array of accepts provided.
