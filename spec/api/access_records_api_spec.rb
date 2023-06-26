@@ -104,7 +104,7 @@ describe 'AccessRecordsApi' do
   # @option opts [String] :cursor Continuation cursor for paging (will automatically be set)
   # @option opts [String] :filter Filter to search records by. This is a case insensitive search through every text field.
   # @option opts [String] :status Filter records by their current status.
-  # @return [InlineResponse2007]
+  # @return [AccessRecordCollection]
   describe 'get_records test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -116,7 +116,7 @@ describe 'AccessRecordsApi' do
   # Accepts an invite by claiming this invite by this user. The user token used for this request will gain the permissions associated with the invite.
   # @param invite_id The identifier of the invite.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2009]
+  # @return [Account]
   describe 'respond_to_invite test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

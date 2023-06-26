@@ -29,7 +29,7 @@ describe 'ResourcePermissionsApi' do
   # Permissions can be set globally at a resource level. This will apply to all users in an account.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;GRANT *: Authress:ResourcePermissions/{resourceUri}&lt;/span&gt;
   # @param resource_uri The uri path of a resource to validate, must be URL encoded, uri segments are allowed.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2005]
+  # @return [ResourcePermission]
   describe 'get_resource_permissions test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -43,7 +43,7 @@ describe 'ResourcePermissionsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Max number of results to return
   # @option opts [String] :cursor Continuation cursor for paging (will automatically be set)
-  # @return [InlineResponse2006]
+  # @return [ResourceUsersCollection]
   describe 'get_resource_users test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -54,7 +54,7 @@ describe 'ResourcePermissionsApi' do
   # List resource configurations.
   # Permissions can be set globally at a resource level. Lists any resources with a globally set resource policy.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:ResourcePermissions&lt;/span&gt;
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2004]
+  # @return [ResourcePermissionCollection]
   describe 'get_resources test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -5,27 +5,30 @@
 require 'date'
 
 module AuthressSdk
-  # A self link pointing to this request url
-  class V1recordsLinksSelf
-    # The absolute url pointing to the reference resource.
-    attr_accessor :href
+  # A collect of permissions that the user has to a resource.
+  class PermissionCollection
+    attr_accessor :account
 
-    # Optional property indicating the type of link if it is not a default IANA approved global link relation.
-    attr_accessor :rel
+    attr_accessor :user_id
+
+    # A list of the permissions
+    attr_accessor :permissions
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'href' => :'href',
-        :'rel' => :'rel'
+        :'account' => :'account',
+        :'user_id' => :'userId',
+        :'permissions' => :'permissions'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'href' => :'Object',
-        :'rel' => :'Object'
+        :'account' => :'Object',
+        :'user_id' => :'Object',
+        :'permissions' => :'Object'
       }
     end
 
@@ -39,23 +42,29 @@ module AuthressSdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `AuthressSdk::V1recordsLinksSelf` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `AuthressSdk::PermissionCollection` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `AuthressSdk::V1recordsLinksSelf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `AuthressSdk::PermissionCollection`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'href')
-        self.href = attributes[:'href']
+      if attributes.key?(:'account')
+        self.account = attributes[:'account']
       end
 
-      if attributes.key?(:'rel')
-        self.rel = attributes[:'rel']
+      if attributes.key?(:'user_id')
+        self.user_id = attributes[:'user_id']
+      end
+
+      if attributes.key?(:'permissions')
+        if (value = attributes[:'permissions']).is_a?(Array)
+          self.permissions = value
+        end
       end
     end
 
@@ -63,8 +72,12 @@ module AuthressSdk
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @href.nil?
-        invalid_properties.push('invalid value for "href", href cannot be nil.')
+      if @user_id.nil?
+        invalid_properties.push('invalid value for "user_id", user_id cannot be nil.')
+      end
+
+      if @permissions.nil?
+        invalid_properties.push('invalid value for "permissions", permissions cannot be nil.')
       end
 
       invalid_properties
@@ -73,7 +86,8 @@ module AuthressSdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @href.nil?
+      return false if @user_id.nil?
+      return false if @permissions.nil?
       true
     end
 
@@ -82,8 +96,9 @@ module AuthressSdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          href == o.href &&
-          rel == o.rel
+          account == o.account &&
+          user_id == o.user_id &&
+          permissions == o.permissions
     end
 
     # @see the `==` method
@@ -95,7 +110,7 @@ module AuthressSdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [href, rel].hash
+      [account, user_id, permissions].hash
     end
 
     # Builds the object from hash

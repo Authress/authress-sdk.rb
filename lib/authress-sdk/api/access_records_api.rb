@@ -352,7 +352,7 @@ module AuthressSdk
     # @option opts [String] :cursor Continuation cursor for paging (will automatically be set)
     # @option opts [String] :filter Filter to search records by. This is a case insensitive search through every text field.
     # @option opts [String] :status Filter records by their current status.
-    # @return [InlineResponse2007]
+    # @return [AccessRecordCollection]
     def get_records(opts = {})
       data, _status_code, _headers = get_records_with_http_info(opts)
       data
@@ -365,7 +365,7 @@ module AuthressSdk
     # @option opts [String] :cursor Continuation cursor for paging (will automatically be set)
     # @option opts [String] :filter Filter to search records by. This is a case insensitive search through every text field.
     # @option opts [String] :status Filter records by their current status.
-    # @return [Array<(InlineResponse2007, Integer, Hash)>] InlineResponse2007 data, response status code and response headers
+    # @return [Array<(AccessRecordCollection, Integer, Hash)>] AccessRecordCollection data, response status code and response headers
     def get_records_with_http_info(opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: AccessRecordsApi.get_records ...'
@@ -394,7 +394,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse2007' 
+      return_type = opts[:return_type] || 'AccessRecordCollection' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,
@@ -414,7 +414,7 @@ module AuthressSdk
     # Accepts an invite by claiming this invite by this user. The user token used for this request will gain the permissions associated with the invite.
     # @param invite_id The identifier of the invite.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2009]
+    # @return [Account]
     def respond_to_invite(invite_id, opts = {})
       data, _status_code, _headers = respond_to_invite_with_http_info(invite_id, opts)
       data
@@ -424,7 +424,7 @@ module AuthressSdk
     # Accepts an invite by claiming this invite by this user. The user token used for this request will gain the permissions associated with the invite.
     # @param invite_id The identifier of the invite.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2009, Integer, Hash)>] InlineResponse2009 data, response status code and response headers
+    # @return [Array<(Account, Integer, Hash)>] Account data, response status code and response headers
     def respond_to_invite_with_http_info(invite_id, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: AccessRecordsApi.respond_to_invite ...'
@@ -450,7 +450,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse2009' 
+      return_type = opts[:return_type] || 'Account' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:PATCH, local_var_path,

@@ -140,7 +140,7 @@ module AuthressSdk
     # @param user_id The user to check permissions on
     # @param resource_uri The uri path of a resource to validate, must be URL encoded, uri segments are allowed.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2002]
+    # @return [PermissionCollection]
     def get_user_permissions_for_resource(user_id, resource_uri, opts = {})
       data, _status_code, _headers = get_user_permissions_for_resource_with_http_info(user_id, resource_uri, opts)
       data
@@ -151,7 +151,7 @@ module AuthressSdk
     # @param user_id The user to check permissions on
     # @param resource_uri The uri path of a resource to validate, must be URL encoded, uri segments are allowed.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2002, Integer, Hash)>] InlineResponse2002 data, response status code and response headers
+    # @return [Array<(PermissionCollection, Integer, Hash)>] PermissionCollection data, response status code and response headers
     def get_user_permissions_for_resource_with_http_info(user_id, resource_uri, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: UserPermissionsApi.get_user_permissions_for_resource ...'
@@ -181,7 +181,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse2002' 
+      return_type = opts[:return_type] || 'PermissionCollection' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,
@@ -205,7 +205,7 @@ module AuthressSdk
     # @option opts [String] :permissions Permission to check, &#x27;*&#x27; and scoped permissions can also be checked here. By default if the user has any permission explicitly to a resource, it will be included in the list.
     # @option opts [Integer] :limit Max number of results to return (default to 20)
     # @option opts [String] :cursor Continuation cursor for paging (will automatically be set)
-    # @return [InlineResponse200]
+    # @return [UserResources]
     def get_user_resources(user_id, opts = {})
       data, _status_code, _headers = get_user_resources_with_http_info(user_id, opts)
       data
@@ -219,7 +219,7 @@ module AuthressSdk
     # @option opts [String] :permissions Permission to check, &#x27;*&#x27; and scoped permissions can also be checked here. By default if the user has any permission explicitly to a resource, it will be included in the list.
     # @option opts [Integer] :limit Max number of results to return
     # @option opts [String] :cursor Continuation cursor for paging (will automatically be set)
-    # @return [Array<(InlineResponse200, Integer, Hash)>] InlineResponse200 data, response status code and response headers
+    # @return [Array<(UserResources, Integer, Hash)>] UserResources data, response status code and response headers
     def get_user_resources_with_http_info(user_id, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: UserPermissionsApi.get_user_resources ...'
@@ -249,7 +249,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse200' 
+      return_type = opts[:return_type] || 'UserResources' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,
@@ -270,7 +270,7 @@ module AuthressSdk
     # @param body The contents of the permission to set on the token. Will be used instead of the users or clients full permissions. Cannot include permissions that the user or client do not have.
     # @param user_id The user to create an impersonation token for.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2003]
+    # @return [UserToken]
     def request_user_token(body, user_id, opts = {})
       data, _status_code, _headers = request_user_token_with_http_info(body, user_id, opts)
       data
@@ -281,7 +281,7 @@ module AuthressSdk
     # @param body The contents of the permission to set on the token. Will be used instead of the users or clients full permissions. Cannot include permissions that the user or client do not have.
     # @param user_id The user to create an impersonation token for.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2003, Integer, Hash)>] InlineResponse2003 data, response status code and response headers
+    # @return [Array<(UserToken, Integer, Hash)>] UserToken data, response status code and response headers
     def request_user_token_with_http_info(body, user_id, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: UserPermissionsApi.request_user_token ...'
@@ -313,7 +313,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] || @authress_client.object_to_http_body(body) 
 
-      return_type = opts[:return_type] || 'InlineResponse2003' 
+      return_type = opts[:return_type] || 'UserToken' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:POST, local_var_path,

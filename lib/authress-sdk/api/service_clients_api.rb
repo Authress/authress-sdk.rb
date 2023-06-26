@@ -13,7 +13,7 @@ module AuthressSdk
     # Creates a service client to interact with Authress or any other service on behalf of users. Each client has secret private keys used to authenticate with Authress. To use service clients created through other mechanisms, skip creating a client and create access records with the client identifier.         <br><span class=\"badge badge-outline-secondary\">CREATE: Authress:ServiceClients</span> or <span class=\"badge badge-outline-secondary\">RESOURCE CLAIM: Authress:ServiceClients</span>
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20014]
+    # @return [Client]
     def create_client(body, opts = {})
       data, _status_code, _headers = create_client_with_http_info(body, opts)
       data
@@ -23,7 +23,7 @@ module AuthressSdk
     # Creates a service client to interact with Authress or any other service on behalf of users. Each client has secret private keys used to authenticate with Authress. To use service clients created through other mechanisms, skip creating a client and create access records with the client identifier.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;CREATE: Authress:ServiceClients&lt;/span&gt; or &lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;RESOURCE CLAIM: Authress:ServiceClients&lt;/span&gt;
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20014, Integer, Hash)>] InlineResponse20014 data, response status code and response headers
+    # @return [Array<(Client, Integer, Hash)>] Client data, response status code and response headers
     def create_client_with_http_info(body, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: ServiceClientsApi.create_client ...'
@@ -51,7 +51,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] || @authress_client.object_to_http_body(body) 
 
-      return_type = opts[:return_type] || 'InlineResponse20014' 
+      return_type = opts[:return_type] || 'Client' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:POST, local_var_path,
@@ -185,7 +185,7 @@ module AuthressSdk
     # Returns all information related to client except for the private access keys.         <br><span class=\"badge badge-outline-secondary\">READ: Authress:ServiceClients/{clientId}</span>
     # @param client_id The unique identifier for the client.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20014]
+    # @return [Client]
     def get_client(client_id, opts = {})
       data, _status_code, _headers = get_client_with_http_info(client_id, opts)
       data
@@ -195,7 +195,7 @@ module AuthressSdk
     # Returns all information related to client except for the private access keys.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:ServiceClients/{clientId}&lt;/span&gt;
     # @param client_id The unique identifier for the client.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20014, Integer, Hash)>] InlineResponse20014 data, response status code and response headers
+    # @return [Array<(Client, Integer, Hash)>] Client data, response status code and response headers
     def get_client_with_http_info(client_id, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: ServiceClientsApi.get_client ...'
@@ -221,7 +221,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse20014' 
+      return_type = opts[:return_type] || 'Client' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,
@@ -240,7 +240,7 @@ module AuthressSdk
     # Get clients collection.
     # Returns all clients that the user has access to in the account.         <br><span class=\"badge badge-outline-secondary\">READ: Authress:ServiceClients/{clientId}</span>
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20013]
+    # @return [ClientCollection]
     def get_clients(opts = {})
       data, _status_code, _headers = get_clients_with_http_info(opts)
       data
@@ -249,7 +249,7 @@ module AuthressSdk
     # Get clients collection.
     # Returns all clients that the user has access to in the account.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:ServiceClients/{clientId}&lt;/span&gt;
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20013, Integer, Hash)>] InlineResponse20013 data, response status code and response headers
+    # @return [Array<(ClientCollection, Integer, Hash)>] ClientCollection data, response status code and response headers
     def get_clients_with_http_info(opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: ServiceClientsApi.get_clients ...'
@@ -271,7 +271,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse20013' 
+      return_type = opts[:return_type] || 'ClientCollection' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,
@@ -291,7 +291,7 @@ module AuthressSdk
     # Create a new access key for the client so that a service can authenticate with Authress as that client. Using the client will allow delegation of permission checking of users.         <br><span class=\"badge badge-outline-secondary\">UPDATE: Authress:ServiceClients/{clientId}/access-keys</span>
     # @param client_id The unique identifier of the client.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20015]
+    # @return [ClientAccessKey]
     def request_access_key(client_id, opts = {})
       data, _status_code, _headers = request_access_key_with_http_info(client_id, opts)
       data
@@ -301,7 +301,7 @@ module AuthressSdk
     # Create a new access key for the client so that a service can authenticate with Authress as that client. Using the client will allow delegation of permission checking of users.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;UPDATE: Authress:ServiceClients/{clientId}/access-keys&lt;/span&gt;
     # @param client_id The unique identifier of the client.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20015, Integer, Hash)>] InlineResponse20015 data, response status code and response headers
+    # @return [Array<(ClientAccessKey, Integer, Hash)>] ClientAccessKey data, response status code and response headers
     def request_access_key_with_http_info(client_id, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: ServiceClientsApi.request_access_key ...'
@@ -327,7 +327,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse20015' 
+      return_type = opts[:return_type] || 'ClientAccessKey' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:POST, local_var_path,
@@ -348,7 +348,7 @@ module AuthressSdk
     # @param body 
     # @param client_id The unique identifier for the client.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20014]
+    # @return [Client]
     def update_client(body, client_id, opts = {})
       data, _status_code, _headers = update_client_with_http_info(body, client_id, opts)
       data
@@ -359,7 +359,7 @@ module AuthressSdk
     # @param body 
     # @param client_id The unique identifier for the client.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20014, Integer, Hash)>] InlineResponse20014 data, response status code and response headers
+    # @return [Array<(Client, Integer, Hash)>] Client data, response status code and response headers
     def update_client_with_http_info(body, client_id, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: ServiceClientsApi.update_client ...'
@@ -391,7 +391,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] || @authress_client.object_to_http_body(body) 
 
-      return_type = opts[:return_type] || 'InlineResponse20014' 
+      return_type = opts[:return_type] || 'Client' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:PUT, local_var_path,

@@ -30,7 +30,7 @@ describe 'MetadataApi' do
   # @param user_id The owner of the data.
   # @param resource_uri The resource the data is attached to.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2001]
+  # @return [MetadataObject]
   describe 'get_user_metadata test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -44,7 +44,7 @@ describe 'MetadataApi' do
   # @param user_id The owner of the data.
   # @param resource_uri The resource the data is attached to.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2001]
+  # @return [MetadataObject]
   describe 'update_user_metadata test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

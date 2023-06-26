@@ -13,7 +13,7 @@ module AuthressSdk
     # Creates a role with permissions.         <br><span class=\"badge badge-outline-secondary\">CREATE: Authress:Roles</span>
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20010]
+    # @return [Role]
     def create_role(body, opts = {})
       data, _status_code, _headers = create_role_with_http_info(body, opts)
       data
@@ -23,7 +23,7 @@ module AuthressSdk
     # Creates a role with permissions.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;CREATE: Authress:Roles&lt;/span&gt;
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20010, Integer, Hash)>] InlineResponse20010 data, response status code and response headers
+    # @return [Array<(Role, Integer, Hash)>] Role data, response status code and response headers
     def create_role_with_http_info(body, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: RolesApi.create_role ...'
@@ -51,7 +51,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] || @authress_client.object_to_http_body(body) 
 
-      return_type = opts[:return_type] || 'InlineResponse20010' 
+      return_type = opts[:return_type] || 'Role' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:POST, local_var_path,
@@ -125,7 +125,7 @@ module AuthressSdk
     # Roles contain a list of permissions that will be applied to any user or resource         <br><span class=\"badge badge-outline-secondary\">READ: Authress:Roles/{roleId}</span>
     # @param role_id The identifier of the role.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20010]
+    # @return [Role]
     def get_role(role_id, opts = {})
       data, _status_code, _headers = get_role_with_http_info(role_id, opts)
       data
@@ -135,7 +135,7 @@ module AuthressSdk
     # Roles contain a list of permissions that will be applied to any user or resource         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:Roles/{roleId}&lt;/span&gt;
     # @param role_id The identifier of the role.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20010, Integer, Hash)>] InlineResponse20010 data, response status code and response headers
+    # @return [Array<(Role, Integer, Hash)>] Role data, response status code and response headers
     def get_role_with_http_info(role_id, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: RolesApi.get_role ...'
@@ -161,7 +161,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse20010' 
+      return_type = opts[:return_type] || 'Role' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,
@@ -182,7 +182,7 @@ module AuthressSdk
     # @param body 
     # @param role_id The identifier of the role.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20010]
+    # @return [Role]
     def update_role(body, role_id, opts = {})
       data, _status_code, _headers = update_role_with_http_info(body, role_id, opts)
       data
@@ -193,7 +193,7 @@ module AuthressSdk
     # @param body 
     # @param role_id The identifier of the role.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20010, Integer, Hash)>] InlineResponse20010 data, response status code and response headers
+    # @return [Array<(Role, Integer, Hash)>] Role data, response status code and response headers
     def update_role_with_http_info(body, role_id, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: RolesApi.update_role ...'
@@ -225,7 +225,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] || @authress_client.object_to_http_body(body) 
 
-      return_type = opts[:return_type] || 'InlineResponse20010' 
+      return_type = opts[:return_type] || 'Role' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:PUT, local_var_path,

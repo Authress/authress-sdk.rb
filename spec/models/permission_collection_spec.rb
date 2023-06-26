@@ -6,22 +6,22 @@ require 'spec_helper'
 require 'json'
 require 'date'
 
-# Unit tests for AuthressSdk::InlineResponse2002
+# Unit tests for AuthressSdk::PermissionCollection
 
 # Please update as you see appropriate
-describe 'InlineResponse2002' do
+describe 'PermissionCollection' do
   before do
     # run before each test
-    @instance = AuthressSdk::InlineResponse2002.new
+    @instance = AuthressSdk::PermissionCollection.new
   end
 
   after do
     # run after each test
   end
 
-  describe 'test an instance of InlineResponse2002' do
-    it 'should create an instance of InlineResponse2002' do
-      expect(@instance).to be_instance_of(AuthressSdk::InlineResponse2002)
+  describe 'test an instance of PermissionCollection' do
+    it 'should create an instance of PermissionCollection' do
+      expect(@instance).to be_instance_of(AuthressSdk::PermissionCollection)
     end
   end
   describe 'test attribute "account"' do

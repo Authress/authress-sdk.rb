@@ -57,7 +57,7 @@ describe 'UserPermissionsApi' do
   # @param user_id The user to check permissions on
   # @param resource_uri The uri path of a resource to validate, must be URL encoded, uri segments are allowed.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2002]
+  # @return [PermissionCollection]
   describe 'get_user_permissions_for_resource test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -73,7 +73,7 @@ describe 'UserPermissionsApi' do
   # @option opts [String] :permissions Permission to check, &#x27;*&#x27; and scoped permissions can also be checked here. By default if the user has any permission explicitly to a resource, it will be included in the list.
   # @option opts [Integer] :limit Max number of results to return
   # @option opts [String] :cursor Continuation cursor for paging (will automatically be set)
-  # @return [InlineResponse200]
+  # @return [UserResources]
   describe 'get_user_resources test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -86,7 +86,7 @@ describe 'UserPermissionsApi' do
   # @param body The contents of the permission to set on the token. Will be used instead of the users or clients full permissions. Cannot include permissions that the user or client do not have.
   # @param user_id The user to create an impersonation token for.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2003]
+  # @return [UserToken]
   describe 'request_user_token test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
