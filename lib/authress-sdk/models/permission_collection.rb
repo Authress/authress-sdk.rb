@@ -5,16 +5,11 @@
 require 'date'
 
 module AuthressSdk
-  # The role which contains a list of permissions.
-  class InlineResponse20010
-    # Unique identifier for the role, can be specified on creation, and used by records to map to permissions.
-    attr_accessor :role_id
+  # A collect of permissions that the user has to a resource.
+  class PermissionCollection
+    attr_accessor :account
 
-    # A helpful name for this role
-    attr_accessor :name
-
-    # A description for when to the user as well as additional information.
-    attr_accessor :description
+    attr_accessor :user_id
 
     # A list of the permissions
     attr_accessor :permissions
@@ -22,9 +17,8 @@ module AuthressSdk
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'role_id' => :'roleId',
-        :'name' => :'name',
-        :'description' => :'description',
+        :'account' => :'account',
+        :'user_id' => :'userId',
         :'permissions' => :'permissions'
       }
     end
@@ -32,9 +26,8 @@ module AuthressSdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'role_id' => :'Object',
-        :'name' => :'Object',
-        :'description' => :'Object',
+        :'account' => :'Object',
+        :'user_id' => :'Object',
         :'permissions' => :'Object'
       }
     end
@@ -49,27 +42,23 @@ module AuthressSdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `AuthressSdk::InlineResponse20010` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `AuthressSdk::PermissionCollection` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `AuthressSdk::InlineResponse20010`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `AuthressSdk::PermissionCollection`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'role_id')
-        self.role_id = attributes[:'role_id']
+      if attributes.key?(:'account')
+        self.account = attributes[:'account']
       end
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
+      if attributes.key?(:'user_id')
+        self.user_id = attributes[:'user_id']
       end
 
       if attributes.key?(:'permissions')
@@ -83,12 +72,8 @@ module AuthressSdk
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @role_id.nil?
-        invalid_properties.push('invalid value for "role_id", role_id cannot be nil.')
-      end
-
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      if @user_id.nil?
+        invalid_properties.push('invalid value for "user_id", user_id cannot be nil.')
       end
 
       if @permissions.nil?
@@ -101,8 +86,7 @@ module AuthressSdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @role_id.nil?
-      return false if @name.nil?
+      return false if @user_id.nil?
       return false if @permissions.nil?
       true
     end
@@ -112,9 +96,8 @@ module AuthressSdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          role_id == o.role_id &&
-          name == o.name &&
-          description == o.description &&
+          account == o.account &&
+          user_id == o.user_id &&
           permissions == o.permissions
     end
 
@@ -127,7 +110,7 @@ module AuthressSdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [role_id, name, description, permissions].hash
+      [account, user_id, permissions].hash
     end
 
     # Builds the object from hash

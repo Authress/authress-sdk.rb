@@ -5,25 +5,17 @@
 require 'date'
 
 module AuthressSdk
-  class InlineResponse2009
-    attr_accessor :account_id
-
-    attr_accessor :created_time
-
-    # The top authress sub domain specific for this account to be used with this API.
-    attr_accessor :domain
-
-    attr_accessor :company
+  # A collection of user identities
+  class UserIdentityCollection
+    # A list of user identities
+    attr_accessor :users
 
     attr_accessor :links
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'account_id' => :'accountId',
-        :'created_time' => :'createdTime',
-        :'domain' => :'domain',
-        :'company' => :'company',
+        :'users' => :'users',
         :'links' => :'links'
       }
     end
@@ -31,10 +23,7 @@ module AuthressSdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'account_id' => :'Object',
-        :'created_time' => :'Object',
-        :'domain' => :'Object',
-        :'company' => :'Object',
+        :'users' => :'Object',
         :'links' => :'Object'
       }
     end
@@ -49,31 +38,21 @@ module AuthressSdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `AuthressSdk::InlineResponse2009` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `AuthressSdk::UserIdentityCollection` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `AuthressSdk::InlineResponse2009`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `AuthressSdk::UserIdentityCollection`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'account_id')
-        self.account_id = attributes[:'account_id']
-      end
-
-      if attributes.key?(:'created_time')
-        self.created_time = attributes[:'created_time']
-      end
-
-      if attributes.key?(:'domain')
-        self.domain = attributes[:'domain']
-      end
-
-      if attributes.key?(:'company')
-        self.company = attributes[:'company']
+      if attributes.key?(:'users')
+        if (value = attributes[:'users']).is_a?(Array)
+          self.users = value
+        end
       end
 
       if attributes.key?(:'links')
@@ -85,20 +64,8 @@ module AuthressSdk
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @account_id.nil?
-        invalid_properties.push('invalid value for "account_id", account_id cannot be nil.')
-      end
-
-      if @created_time.nil?
-        invalid_properties.push('invalid value for "created_time", created_time cannot be nil.')
-      end
-
-      if @domain.nil?
-        invalid_properties.push('invalid value for "domain", domain cannot be nil.')
-      end
-
-      if @company.nil?
-        invalid_properties.push('invalid value for "company", company cannot be nil.')
+      if @users.nil?
+        invalid_properties.push('invalid value for "users", users cannot be nil.')
       end
 
       if @links.nil?
@@ -111,10 +78,7 @@ module AuthressSdk
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @account_id.nil?
-      return false if @created_time.nil?
-      return false if @domain.nil?
-      return false if @company.nil?
+      return false if @users.nil?
       return false if @links.nil?
       true
     end
@@ -124,10 +88,7 @@ module AuthressSdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          account_id == o.account_id &&
-          created_time == o.created_time &&
-          domain == o.domain &&
-          company == o.company &&
+          users == o.users &&
           links == o.links
     end
 
@@ -140,7 +101,7 @@ module AuthressSdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_id, created_time, domain, company, links].hash
+      [users, links].hash
     end
 
     # Builds the object from hash

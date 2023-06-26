@@ -29,7 +29,7 @@ describe 'ServiceClientsApi' do
   # Creates a service client to interact with Authress or any other service on behalf of users. Each client has secret private keys used to authenticate with Authress. To use service clients created through other mechanisms, skip creating a client and create access records with the client identifier.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;CREATE: Authress:ServiceClients&lt;/span&gt; or &lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;RESOURCE CLAIM: Authress:ServiceClients&lt;/span&gt;
   # @param body 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20014]
+  # @return [Client]
   describe 'create_client test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -66,7 +66,7 @@ describe 'ServiceClientsApi' do
   # Returns all information related to client except for the private access keys.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:ServiceClients/{clientId}&lt;/span&gt;
   # @param client_id The unique identifier for the client.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20014]
+  # @return [Client]
   describe 'get_client test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -77,7 +77,7 @@ describe 'ServiceClientsApi' do
   # Get clients collection.
   # Returns all clients that the user has access to in the account.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:ServiceClients/{clientId}&lt;/span&gt;
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20013]
+  # @return [ClientCollection]
   describe 'get_clients test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -89,7 +89,7 @@ describe 'ServiceClientsApi' do
   # Create a new access key for the client so that a service can authenticate with Authress as that client. Using the client will allow delegation of permission checking of users.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;UPDATE: Authress:ServiceClients/{clientId}/access-keys&lt;/span&gt;
   # @param client_id The unique identifier of the client.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20015]
+  # @return [ClientAccessKey]
   describe 'request_access_key test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -102,7 +102,7 @@ describe 'ServiceClientsApi' do
   # @param body 
   # @param client_id The unique identifier for the client.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20014]
+  # @return [Client]
   describe 'update_client test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

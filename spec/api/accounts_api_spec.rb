@@ -29,7 +29,7 @@ describe 'AccountsApi' do
   # Includes the original configuration information.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:Configuration&lt;/span&gt;
   # @param account_id The unique identifier for the account
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2009]
+  # @return [Account]
   describe 'get_account test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -40,7 +40,7 @@ describe 'AccountsApi' do
   # Get all linked identities for this account.
   # Returns a list of identities linked for this account.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:Configuration&lt;/span&gt;
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20012]
+  # @return [IdentityCollection]
   describe 'get_account_identities test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -51,7 +51,7 @@ describe 'AccountsApi' do
   # Get all accounts user has access to
   # Returns a list of accounts that the user has access to.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:Configuration&lt;/span&gt;
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20011]
+  # @return [AccountCollection]
   describe 'get_accounts test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -13,7 +13,7 @@ module AuthressSdk
     # Includes the original configuration information.         <br><span class=\"badge badge-outline-secondary\">READ: Authress:Configuration</span>
     # @param account_id The unique identifier for the account
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2009]
+    # @return [Account]
     def get_account(account_id, opts = {})
       data, _status_code, _headers = get_account_with_http_info(account_id, opts)
       data
@@ -23,7 +23,7 @@ module AuthressSdk
     # Includes the original configuration information.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:Configuration&lt;/span&gt;
     # @param account_id The unique identifier for the account
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2009, Integer, Hash)>] InlineResponse2009 data, response status code and response headers
+    # @return [Array<(Account, Integer, Hash)>] Account data, response status code and response headers
     def get_account_with_http_info(account_id, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: AccountsApi.get_account ...'
@@ -49,7 +49,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse2009' 
+      return_type = opts[:return_type] || 'Account' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,
@@ -68,7 +68,7 @@ module AuthressSdk
     # Get all linked identities for this account.
     # Returns a list of identities linked for this account.         <br><span class=\"badge badge-outline-secondary\">READ: Authress:Configuration</span>
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20012]
+    # @return [IdentityCollection]
     def get_account_identities(opts = {})
       data, _status_code, _headers = get_account_identities_with_http_info(opts)
       data
@@ -77,7 +77,7 @@ module AuthressSdk
     # Get all linked identities for this account.
     # Returns a list of identities linked for this account.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:Configuration&lt;/span&gt;
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20012, Integer, Hash)>] InlineResponse20012 data, response status code and response headers
+    # @return [Array<(IdentityCollection, Integer, Hash)>] IdentityCollection data, response status code and response headers
     def get_account_identities_with_http_info(opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: AccountsApi.get_account_identities ...'
@@ -99,7 +99,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse20012' 
+      return_type = opts[:return_type] || 'IdentityCollection' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,
@@ -118,7 +118,7 @@ module AuthressSdk
     # Get all accounts user has access to
     # Returns a list of accounts that the user has access to.         <br><span class=\"badge badge-outline-secondary\">READ: Authress:Configuration</span>
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20011]
+    # @return [AccountCollection]
     def get_accounts(opts = {})
       data, _status_code, _headers = get_accounts_with_http_info(opts)
       data
@@ -127,7 +127,7 @@ module AuthressSdk
     # Get all accounts user has access to
     # Returns a list of accounts that the user has access to.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:Configuration&lt;/span&gt;
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20011, Integer, Hash)>] InlineResponse20011 data, response status code and response headers
+    # @return [Array<(AccountCollection, Integer, Hash)>] AccountCollection data, response status code and response headers
     def get_accounts_with_http_info(opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: AccountsApi.get_accounts ...'
@@ -149,7 +149,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse20011' 
+      return_type = opts[:return_type] || 'AccountCollection' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,

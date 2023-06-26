@@ -13,7 +13,7 @@ module AuthressSdk
     # Permissions can be set globally at a resource level. This will apply to all users in an account.         <br><span class=\"badge badge-outline-secondary\">GRANT *: Authress:ResourcePermissions/{resourceUri}</span>
     # @param resource_uri The uri path of a resource to validate, must be URL encoded, uri segments are allowed.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2005]
+    # @return [ResourcePermission]
     def get_resource_permissions(resource_uri, opts = {})
       data, _status_code, _headers = get_resource_permissions_with_http_info(resource_uri, opts)
       data
@@ -23,7 +23,7 @@ module AuthressSdk
     # Permissions can be set globally at a resource level. This will apply to all users in an account.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;GRANT *: Authress:ResourcePermissions/{resourceUri}&lt;/span&gt;
     # @param resource_uri The uri path of a resource to validate, must be URL encoded, uri segments are allowed.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2005, Integer, Hash)>] InlineResponse2005 data, response status code and response headers
+    # @return [Array<(ResourcePermission, Integer, Hash)>] ResourcePermission data, response status code and response headers
     def get_resource_permissions_with_http_info(resource_uri, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: ResourcePermissionsApi.get_resource_permissions ...'
@@ -49,7 +49,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse2005' 
+      return_type = opts[:return_type] || 'ResourcePermission' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,
@@ -71,7 +71,7 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Max number of results to return (default to 20)
     # @option opts [String] :cursor Continuation cursor for paging (will automatically be set)
-    # @return [InlineResponse2006]
+    # @return [ResourceUsersCollection]
     def get_resource_users(resource_uri, opts = {})
       data, _status_code, _headers = get_resource_users_with_http_info(resource_uri, opts)
       data
@@ -83,7 +83,7 @@ module AuthressSdk
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Max number of results to return
     # @option opts [String] :cursor Continuation cursor for paging (will automatically be set)
-    # @return [Array<(InlineResponse2006, Integer, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(ResourceUsersCollection, Integer, Hash)>] ResourceUsersCollection data, response status code and response headers
     def get_resource_users_with_http_info(resource_uri, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: ResourcePermissionsApi.get_resource_users ...'
@@ -111,7 +111,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse2006' 
+      return_type = opts[:return_type] || 'ResourceUsersCollection' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,
@@ -130,7 +130,7 @@ module AuthressSdk
     # List resource configurations.
     # Permissions can be set globally at a resource level. Lists any resources with a globally set resource policy.         <br><span class=\"badge badge-outline-secondary\">READ: Authress:ResourcePermissions</span>
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2004]
+    # @return [ResourcePermissionCollection]
     def get_resources(opts = {})
       data, _status_code, _headers = get_resources_with_http_info(opts)
       data
@@ -139,7 +139,7 @@ module AuthressSdk
     # List resource configurations.
     # Permissions can be set globally at a resource level. Lists any resources with a globally set resource policy.         &lt;br&gt;&lt;span class&#x3D;\&quot;badge badge-outline-secondary\&quot;&gt;READ: Authress:ResourcePermissions&lt;/span&gt;
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2004, Integer, Hash)>] InlineResponse2004 data, response status code and response headers
+    # @return [Array<(ResourcePermissionCollection, Integer, Hash)>] ResourcePermissionCollection data, response status code and response headers
     def get_resources_with_http_info(opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: ResourcePermissionsApi.get_resources ...'
@@ -161,7 +161,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse2004' 
+      return_type = opts[:return_type] || 'ResourcePermissionCollection' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,

@@ -14,7 +14,7 @@ module AuthressSdk
     # @param user_id The owner of the data.
     # @param resource_uri The resource the data is attached to.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2001]
+    # @return [MetadataObject]
     def get_user_metadata(user_id, resource_uri, opts = {})
       data, _status_code, _headers = get_user_metadata_with_http_info(user_id, resource_uri, opts)
       data
@@ -25,7 +25,7 @@ module AuthressSdk
     # @param user_id The owner of the data.
     # @param resource_uri The resource the data is attached to.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2001, Integer, Hash)>] InlineResponse2001 data, response status code and response headers
+    # @return [Array<(MetadataObject, Integer, Hash)>] MetadataObject data, response status code and response headers
     def get_user_metadata_with_http_info(user_id, resource_uri, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: MetadataApi.get_user_metadata ...'
@@ -55,7 +55,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse2001' 
+      return_type = opts[:return_type] || 'MetadataObject' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:GET, local_var_path,
@@ -77,7 +77,7 @@ module AuthressSdk
     # @param user_id The owner of the data.
     # @param resource_uri The resource the data is attached to.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2001]
+    # @return [MetadataObject]
     def update_user_metadata(body, user_id, resource_uri, opts = {})
       data, _status_code, _headers = update_user_metadata_with_http_info(body, user_id, resource_uri, opts)
       data
@@ -89,7 +89,7 @@ module AuthressSdk
     # @param user_id The owner of the data.
     # @param resource_uri The resource the data is attached to.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2001, Integer, Hash)>] InlineResponse2001 data, response status code and response headers
+    # @return [Array<(MetadataObject, Integer, Hash)>] MetadataObject data, response status code and response headers
     def update_user_metadata_with_http_info(body, user_id, resource_uri, opts = {})
       if @authress_client.config[:debugging]
         @authress_client.config[:logger].debug 'Calling API: MetadataApi.update_user_metadata ...'
@@ -125,7 +125,7 @@ module AuthressSdk
       # http body (model)
       post_body = opts[:body] || @authress_client.object_to_http_body(body) 
 
-      return_type = opts[:return_type] || 'InlineResponse2001' 
+      return_type = opts[:return_type] || 'MetadataObject' 
 
       auth_names = opts[:auth_names] || ['oauth2']
       data, status_code, headers = @authress_client.call_api(:PUT, local_var_path,
