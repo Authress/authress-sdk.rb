@@ -92,7 +92,7 @@ module AuthressSdk
 
       default_headers = {
         'Content-Type' => 'application/json',
-        'User-Agent' => "Ruby AuthressSDK version: #{Gem.loaded_specs["authress-sdk"].version.to_s}"
+        'User-Agent' => "Authress SDK; Ruby; #{Gem.loaded_specs["authress-sdk"].version.to_s};"
       }
       header_params = default_headers.merge(opts[:header_params] || {})
       query_params = opts[:query_params] || {}

@@ -31,7 +31,7 @@ module OmniAuth
       def client
         options.client_id = options.application_id
         options.client_options.headers = {
-          'User-Agent' => 'Ruby OmniAuth'
+          'User-Agent' => "Authress SDK; Ruby; #{Gem.loaded_specs["authress-sdk"].version.to_s};"
         }
         options.client_options.auth_scheme = :request_body
         options.client_options.site = @authress_client.custom_domain_url
