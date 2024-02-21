@@ -1,3 +1,7 @@
+<p id="main" align="center">
+  <img src="https://authress.io/static/images/linkedin-banner.png" alt="Authress media banner">
+</p>
+
 # Authress SDK for Ruby
 This is the Authress SDK used to integrate with the authorization as a service provider Authress at https://authress.io.
 
