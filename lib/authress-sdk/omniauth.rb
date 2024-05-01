@@ -146,7 +146,7 @@ module OmniAuth
             env['omniauth.auth'] = auth_hash
             call_app!
           end
-        rescue AuthressSdk::TokenValidationError => e
+        rescue AuthressSdk::TokenVerificationError => e
           fail!(:token_validation_error, e)
         rescue ::OAuth2::Error, CallbackError => e
           fail!(:invalid_credentials, e)
