@@ -47,6 +47,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'jwt', '>= 2.8'
   s.add_runtime_dependency 'oauth2'
   s.add_runtime_dependency 'rbnacl'
+  s.add_runtime_dependency 'openssl'
 
   s.add_development_dependency 'rspec'
 
