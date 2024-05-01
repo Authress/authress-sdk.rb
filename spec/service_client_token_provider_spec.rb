@@ -1,7 +1,3 @@
-=begin
-
-=end
-
 require 'spec_helper'
 
 customDomain = 'authress.token-validation.test'
@@ -15,14 +11,14 @@ describe AuthressSdk::ServiceClientTokenProvider do
       tokenProvider = AuthressSdk::ServiceClientTokenProvider.new(access_key, customDomain)
       result = tokenProvider.get_token()
 
-      # user_identity = JSON.parse(Base64.decode64(result.split(".")[1].tr('-_','+/')))
+      user_identity = JSON.parse(Base64.decode64(result.split(".")[1].tr('-_','+/')))
 
-      # expect(user_identity["client_id"]).to eq("CLIENT");
-      # expect(user_identity["sub"]).to eq("CLIENT");
-      # expect(user_identity["iss"]).to eq("https://authress.token-validation.test/v1/clients/CLIENT");
+      expect(user_identity["client_id"]).to eq("CLIENT");
+      expect(user_identity["sub"]).to eq("CLIENT");
+      expect(user_identity["iss"]).to eq("https://authress.token-validation.test/v1/clients/CLIENT");
 
-      # headers = JSON.parse(Base64.decode64(result.split(".")[0].tr('-_','+/')))
-      # expect(headers).to eq({"alg"=>"EdDSA", "kid"=>"KEY", "typ"=>"at+jwt"})
+      headers = JSON.parse(Base64.decode64(result.split(".")[0].tr('-_','+/')))
+      expect(headers).to eq({"alg"=>"EdDSA", "kid"=>"KEY", "typ"=>"at+jwt"})
     end
   end
 end

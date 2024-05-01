@@ -62,14 +62,19 @@ module AuthressSdk
         raise Exception("Invalid Service Client Access Key")
       end
 
-      return decodedAccessKey.privateKey
+      priv_pem = <<~EOF
+      -----BEGIN PRIVATE KEY-----
+      #{decodedAccessKey.privateKey}
+      -----END PRIVATE KEY-----
+      EOF
 
-      # The Ed25519 module is broken right now and doesn't accept valid private keys.
-      # private_key = RbNaCl::Signatures::Ed25519::SigningKey.new(Base64.decode64(decodedAccessKey.privateKey)[0, 32])
+      privateKey = OpenSSL::PKey.read(priv_pem)
+      result = Base64.encode64(privateKey.raw_private_key).tr('+/', '-_').delete('=')
+      private_key = RbNaCl::Signatures::Ed25519::SigningKey.new(Base64.decode64(result))
       
-      # token = JWT.encode(jwt, private_key, 'ED25519', { typ: 'at+jwt', alg: 'EdDSA', kid: decodedAccessKey.keyId })
-      # @cachedKeyData = { token: token, expires: jwt['exp'] }
-      # return token
+      token = JWT.encode(jwt, private_key, 'ED25519', { typ: 'at+jwt', alg: 'EdDSA', kid: decodedAccessKey.keyId })
+      @cachedKeyData = { token: token, expires: jwt['exp'] }
+      return token
     end
   end
 end
