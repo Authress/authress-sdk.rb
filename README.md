@@ -78,7 +78,7 @@ end
 
 # on api route
 [route('/resources/<resourceId>')]
-def getResource(resourceId) {
+def getResource(resourceId)
   # Check Authress to authorize the user
   user_identity = AuthressSdk::AuthressClient.verify_token(request.headers.get('authorization'))
 
@@ -86,6 +86,7 @@ def getResource(resourceId) {
   user_id = user_identity.sub
   resource_uri = "resources/#{resourceId}" # String | The uri path of a resource to validate, must be URL encoded, uri segments are allowed, the resource must be a full path, and permissions are not inherited by sub-resources.
   permission = 'READ' # String | Permission to check, '*' and scoped permissions can also be checked here.
+
   begin
     # Check to see if a user has permissions to a resource.
     api_instance = AuthressSdk::UserPermissionsApi.new

@@ -20,6 +20,9 @@ module AuthressSdk
     # Token Provider
     attr_accessor :token_provider
 
+    # The Token verifier
+    attr_accessor :token_verifier
+
     # Initializes the AuthressClient
     def initialize()
       @config = {
@@ -29,6 +32,7 @@ module AuthressSdk
       }
 
       @token_provider = ConstantTokenProvider.new(nil)
+      @token_verifier = TokenVerifier.new()
     end
 
     def self.default
@@ -296,6 +300,13 @@ module AuthressSdk
       else
         obj
       end
+    end
+
+    # Verify a JWT token
+    # @param [String] The JWT token
+    # @return [Object] Returns a Map of user identity properties
+    def verify_token(token)
+      @token_verifier.verify_token(custom_domain_url, token)
     end
   end
 end
