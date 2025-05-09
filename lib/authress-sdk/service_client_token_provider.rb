@@ -2,6 +2,7 @@ require 'time'
 require 'json'
 require 'logger'
 require 'uri'
+require 'jwt/eddsa'
 
 module AuthressSdk
   class ServiceClientTokenProvider    
@@ -70,9 +71,9 @@ module AuthressSdk
 
       privateKey = OpenSSL::PKey.read(priv_pem)
       result = Base64.encode64(privateKey.raw_private_key).tr('+/', '-_').delete('=')
-      private_key = RbNaCl::Signatures::Ed25519::SigningKey.new(Base64.decode64(result))
+      private_key = Ed25519::SigningKey.new(Base64.decode64(result))
       
-      token = JWT.encode(jwt, private_key, 'ED25519', { typ: 'at+jwt', alg: 'EdDSA', kid: decodedAccessKey.keyId })
+      token = JWT.encode(jwt, private_key, 'EdDSA', { typ: 'at+jwt', alg: 'EdDSA', kid: decodedAccessKey.keyId })
       @cachedKeyData = { token: token, expires: jwt['exp'] }
       return token
     end
