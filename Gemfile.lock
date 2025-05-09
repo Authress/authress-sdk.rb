@@ -55,7 +55,7 @@ GEM
     pry-byebug (3.10.1)
       byebug (~> 11.0)
       pry (>= 0.13, < 0.15)
-    rack (3.0.14)
+    rack (3.0.16)
     rack-protection (3.0.6)
       rack
     rainbow (3.1.1)
