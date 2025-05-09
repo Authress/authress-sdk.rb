@@ -45,6 +45,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'
   s.add_runtime_dependency 'omniauth-oauth2'
   s.add_runtime_dependency 'jwt', '>= 2.8'
+  s.add_runtime_dependency 'jwt-eddsa'
   s.add_runtime_dependency 'oauth2'
   s.add_runtime_dependency 'rbnacl'
   s.add_runtime_dependency 'openssl'
