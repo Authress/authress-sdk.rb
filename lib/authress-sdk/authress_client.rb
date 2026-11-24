@@ -43,7 +43,7 @@ module AuthressSdk
     def custom_domain_url
       domain_url = URI(@base_url)
       domain_url = URI("https://#{domain_url}") if domain_url.scheme.nil?
-      domain_url.to_s
+      domain_url.to_s.gsub(/\/+\z/, '')
     end
 
     def set_token(token)

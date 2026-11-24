@@ -29,7 +29,7 @@ module AuthressSdk
     end
 
     def get_issuer(unsanitizedAuthressCustomDomain, decodedAccessKey)
-      authressCustomDomain = sanitizeUrl(@custom_domain_url).gsub(/\/+$/, '')
+      authressCustomDomain = sanitizeUrl(unsanitizedAuthressCustomDomain).gsub(/\/+$/, '')
       return "#{authressCustomDomain}/v1/clients/#{decodedAccessKey.clientId}"
     end
 
