@@ -46,18 +46,22 @@ module AuthressSdk
         raise TokenVerificationError.new("Unauthorized: No Issuer in token")
       end
 
+      canonicalIssuer = get_canonical_issuer(issuer)
+      if canonicalIssuer.nil?
+        raise TokenVerificationError.new("Unauthorized: Issuer is not in canonical form")
+      end
+
       if (URI(issuer).host != URI(completeIssuerUrl).host)
         raise TokenVerificationError.new("Unauthorized: Issuer does not match")
       end
 
       # Handle service client checking
-      issuerPath = URI(issuer).path
-      clientIdMatcher = /^\/v\d\/clients\/([^\/]+)$/.match(issuerPath)
+      clientIdMatcher = /\A\/v\d\/clients\/([^\/]+)\/?\z/.match(canonicalIssuer[:path])
       if clientIdMatcher && clientIdMatcher[1] != unverifiedPayload[0]['sub']
         raise TokenVerificationError.new("Unauthorized: Service ID does not match token sub claim")
       end
 
-      jwkObject = get_public_key("#{issuer}/.well-known/openid-configuration/jwks", kid)
+      jwkObject = get_public_key("#{canonicalIssuer[:url]}/.well-known/openid-configuration/jwks", kid)
       jwk = jwkObject.verify_key()
 
       begin
@@ -67,6 +71,18 @@ module AuthressSdk
       rescue Exception => e
         raise TokenVerificationError.new("Unauthorized: Token is invalid - #{e}")
       end
+    end
+
+    # The service client check and the JWKS fetch must read the same issuer value. Any issuer that a runtime could normalise differently is rejected.
+    def get_canonical_issuer(issuer)
+      issuerMatch = issuer =~ /[?#\\]/ ? nil : /\A([a-z][a-z0-9+.-]*:\/\/[^\/@]+)(\/.*)?\z/i.match(issuer)
+      return nil if issuerMatch.nil?
+
+      path = (issuerMatch[2] || '').delete_suffix('/')
+      segments = path.empty? ? [] : path[1..].split('/', -1)
+      return nil if segments.any? { |segment| segment.empty? || segment == '.' || segment == '..' || segment =~ /%(2e|2f|5c)/i }
+
+      { url: "#{issuerMatch[1]}#{path}", path: path }
     end
 
     def get_public_key(jwkKeyListUrl, kid)
